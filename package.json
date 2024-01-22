@@ -1,0 +1,15 @@
+{
+  "name": "eco_swap",
+  "version": "1.0.0",
+  "description": "- Which problem Project is Solving?",
+  "main": "app.js",
+  "scripts": {
+    "test": "testsource"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2"
+  }
+}
