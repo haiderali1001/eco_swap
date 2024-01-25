@@ -1,0 +1,17 @@
+[
+    {
+    "name" : "Razer viper mini",
+    "price": 2000,
+    "pid" : 1
+},
+{
+    "name" : "Logitech gpro wireless",
+    "price" : 7000,
+    "pid" : 2
+},
+{
+    "name" : "ROG strix g15",
+    "price" : 70000,
+    "pid" : 3
+}
+]

@@ -2,32 +2,69 @@ const express = require("express");
 const port = 3000
 const app = express();
 const bodyParser = require('body-parser');
+const cors = require("cors"); 
+const connectDB = require('./db');
+const mongoose = require('mongoose');
+const Product = require('./models/productModel.js');
 
 app.use(express.json());
-
-const users = [ { username: 'john', password: 'password123', id: 1,  },
-                { username: 'jane', password: 'password456', id: 2 } ];
-
-const products = [
-    {
-        "name" : "Razer viper mini",
-        "price": 2000,
-        "pid" : 1
-    },
-    {
-        "name" : "Logitech gpro wireless",
-        "price" : 7000,
-        "pid" : 2
-    },
-    {
-        "name" : "ROG strix g15",
-        "price" : 70000,
-        "pid" : 3
-    }
-];
-  
+app.use(cors());
   // Middleware to parse JSON requests
 app.use(bodyParser.json());
+
+const users = [ 
+  { username: 'john', password: 'password123', id: 1,  },
+                { username: 'jane', password: 'password456', id: 2 } 
+];
+
+
+// --------------------MONGODB---------------------------------
+connectDB();
+
+const p1 = new Product({
+  name: "Viper_ultimate",
+  price: 7000,
+  pid: 1
+});
+
+const p2 = new Product({
+  name: "Viper_ultimate_v2",
+  price: 10000,
+  pid: 2
+});
+
+const addProductsToDB = async () => {
+  try {
+    await p1.save();
+    console.log(`${p1.name} added successfully!`);
+    await p2.save();
+    console.log(`${p2.name} added successfully!`);
+  } catch (error) {
+    console.error("Error adding products:", error);
+  }
+};
+addProductsToDB();
+
+// -----------------------------ENDS MONGODB----------------------------
+// const products = [
+//     {
+//         "name" : "Razer viper mini",
+//         "price": 2000,
+//         "pid" : 1
+//     },
+//     {
+//         "name" : "Logitech gpro wireless",
+//         "price" : 7000,
+//         "pid" : 2
+//     },
+//     {
+//         "name" : "ROG strix g15",
+//         "price" : 70000,
+//         "pid" : 3
+//     }
+// ];
+  
+
   
   // Login endpoint
 app.post('/login', (req, res) => {
