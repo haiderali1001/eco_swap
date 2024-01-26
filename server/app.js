@@ -1,14 +1,16 @@
 const express = require("express");
-const port = 3000
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require("cors"); 
 const connectDB = require('./db');
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 const Product = require('./models/productModel.js');
 
+dotenv.config();
 app.use(express.json());
 app.use(cors());
+const Port = process.env.PORT;
   // Middleware to parse JSON requests
 app.use(bodyParser.json());
 
@@ -46,26 +48,8 @@ const addProductsToDB = async () => {
 addProductsToDB();
 
 // -----------------------------ENDS MONGODB----------------------------
-// const products = [
-//     {
-//         "name" : "Razer viper mini",
-//         "price": 2000,
-//         "pid" : 1
-//     },
-//     {
-//         "name" : "Logitech gpro wireless",
-//         "price" : 7000,
-//         "pid" : 2
-//     },
-//     {
-//         "name" : "ROG strix g15",
-//         "price" : 70000,
-//         "pid" : 3
-//     }
-// ];
-  
 
-  
+
   // Login endpoint
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
@@ -131,8 +115,8 @@ app.get('/cart',(req,res)=>{
     
 })
 
-app.listen(3000, (req,res)=>{
-    console.log("Server started on port 3000");
+app.listen(Port, (req,res)=>{
+    console.log(`Server started on port ${Port}`);
 });
 
 
