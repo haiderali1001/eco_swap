@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+   
+
+  /* ----------------------------------- */
+  /* fonts */
+  --font-poppins: Poppins;
+  --font-montserrat: Montserrat;
+
+  /* font sizes */
+  --font-size-base: 1rem;
+  --font-size-sm: 0.88rem;
+  --font-size-lgi: 1.19rem;
+  --font-size-xl: 1.25rem;
+  --font-size-6xl: 1.56rem;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-darkgray: #9f9f9f;
+  --color-gray-3: #898989;
+  --color-gray-100: #242424;
+  --color-linen-100: #f9f1e7;
+  --primary: #b88e2f;
+
+  /* Gaps */
+  --gap-mid: 1.06rem;
+  --gap-xl: 1.25rem;
+  --gap-15xl: 2.13rem;
+  --gap-10xs: 0.19rem;
+  --gap-36xl: 3.44rem;
+  --gap-26xl: 2.81rem;
+  --gap-3xs: 0.63rem;
+  --gap-11xs: 0.13rem;
+  --gap-11xl: 1.88rem;
+
+  /* Paddings */
+  --padding-31xl: 3.13rem;
+  --padding-6xl: 1.56rem;
+  --padding-81xl: 6.25rem;
+  --padding-xl: 1.25rem;
+  --padding-mini: 0.94rem;
+  --padding-56xl: 4.69rem;
+  --padding-9xs: 0.25rem;
+  --padding-base: 1rem;
+
+  /* Border radiuses */
+  --br-mini: 15px;
+  --br-8xs: 5px;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+/* ------------------------------------------------- */
+
+
+
+body {
+  margin: 0;
+  line-height: normal;
+}
