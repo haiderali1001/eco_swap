@@ -17,10 +17,10 @@ function Navbar() {
               <div className="contact"><Link to="/contact" style={{ textDecoration: 'none', color: 'black' }}>Contact</Link></div>
             </div>
             <div className="icon-nav">
-              <img  className="mdiaccount-alert-outline-icon"  loading="eager"  alt=""  src="/mdiaccountalertoutline.svg"/>
-              <img  className="akar-iconssearch"  loading="eager"  alt=""  src="/akariconssearch.svg"/>
-              <img className="akar-iconsheart"  loading="eager"  alt=""  src="/akariconsheart.svg"/>
-              <Link to="/cart"><img  className="ant-designshopping-cart-outli-icon"  loading="eager"  alt=""  src="/antdesignshoppingcartoutlined.svg"/></Link>
+              <img  className="icon-profile"  loading="eager"  alt=""  src="/icon-profile.svg"/>
+              <img  className="icon-search"  loading="eager"  alt=""  src="/icon-search.svg"/>
+              <img className="icon-heart"  loading="eager"  alt=""  src="/icon-heart.svg"/>
+              <Link to="/cart"><img  className="icon-cart"  loading="eager"  alt=""  src="/icon-cart.svg"/></Link>
             </div>
         </div>
     </>
