@@ -34,7 +34,17 @@
   --color-gray-3: #898989;
   --color-gray-100: #242424;
   --color-linen-100: #f9f1e7;
+  --color-seashell: #fcf8f3;
   --primary: #b88e2f;
+  --color-darkgoldenrod-100: #9e7514;
+  --color-gray-1: #3a3a3a;
+  --font-color: #333;
+  --font-color1: #666;
+  --color-gray-2: #616161;
+  --color-primary: #e89f71;
+  --color-green-accents: #2ec1ac;
+  --color-red-accents: #e97171;
+  --color-light-bg: #f4f5f7;
 
   /* Gaps */
   --gap-mid: 1.06rem;
@@ -49,13 +59,25 @@
 
   /* Paddings */
   --padding-31xl: 3.13rem;
-  --padding-6xl: 1.56rem;
   --padding-81xl: 6.25rem;
-  --padding-xl: 1.25rem;
-  --padding-mini: 0.94rem;
   --padding-56xl: 4.69rem;
   --padding-9xs: 0.25rem;
+  --padding-6xl: 1.56rem;
+  --padding-xl: 1.25rem;
+  --padding-25xl: 2.75rem;
+  --padding-10xl: 1.81rem;
+  --padding-5xl: 1.5rem;
+  --padding-13xl: 2rem;
+  --padding-mid: 1.06rem;
+  --padding-7xl: 1.63rem;
+  --padding-xs: 0.75rem;
+  --padding-11xl: 1.88rem;
   --padding-base: 1rem;
+  --padding-6xs: 0.44rem;
+  --padding-mini: 0.94rem;
+  --padding-10xs: 0.19rem;
+  --padding-156xl: 10.94rem;
+  --padding-95xl: 7.13rem;
 
   /* Border radiuses */
   --br-mini: 15px;
@@ -73,7 +95,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
+  display: block;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;

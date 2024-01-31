@@ -94,3 +94,8 @@
     color: black;
     align-items: center;
   }
+
+  @media screen and (max-width: 1325px) {
+    .home-parent {
+      display: none;
+    }

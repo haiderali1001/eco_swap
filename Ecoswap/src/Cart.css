@@ -25,8 +25,8 @@
   z-index: 0;
 }
 .meubel-house-logos-05-icon1 {
-  width: 4.81rem;
-  height: 4.81rem;
+  height: 7vh;
+  width: 7vw;
   position: relative;
   object-fit: cover;
   z-index: 1;
@@ -892,9 +892,6 @@
   top: 3.66vh;
 }
 @media screen and (max-width: 1325px) {
-  .home-parent {
-    display: none;
-  }
   .frame-parent {
     width: 55.28rem;
   }

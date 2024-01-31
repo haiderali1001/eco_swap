@@ -19,7 +19,7 @@ function Cart(){
             <img
               className="meubel-house-logos-05-icon1"
               alt=""
-              src="/sitelogo2.png"
+              src="/sitelogo.png"
             />
             <h1 className="cart1">Cart</h1>
           </div>
@@ -77,7 +77,7 @@ function Cart(){
                   className="ant-designdelete-filled-icon"
                   loading="eager"
                   alt=""
-                  src="/antdesigndeletefilled.svg"
+                  src="/icon-delete.svg"
                 />
               </div>
             </div>

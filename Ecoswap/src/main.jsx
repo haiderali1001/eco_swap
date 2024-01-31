@@ -13,6 +13,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/'element={<App/>}/>
       <Route path='/*'element={<p>No route found here</p>}/>
       <Route path='/cart' element={<Cart/>}/>
+      <Route path='/contact' element={<Cart/>}/>
+      <Route path='/checkout' element={<Cart/>}/>
     </Routes>
   </BrowserRouter>
   // <React.StrictMode>
