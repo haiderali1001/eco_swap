@@ -7,11 +7,11 @@ function Navbar() {
     <>
     <div className="navbar">
             <div className="header-frame">
-              <img  className="sitelogo"  loading="eager"  alt=""  src="/sitelogo.png"/>
+              <img  className="sitelogo"  loading="eager"  alt=""  src="/sitelogo2.png"/>
               <div className="title"><Link to="/">ECOSWAP</Link></div>
             </div>
             <div className="home-parent">
-              <div className="home"><Link to="/home" style={{ textDecoration: 'none', color: 'black' }}>Home</Link></div>
+              <div className="home-nav"><Link to="/" style={{ textDecoration: 'none', color: 'black' }}>Home</Link></div>
               <div className="shop"><Link to="/shop" style={{ textDecoration: 'none', color: 'black' }}>Shop</Link></div>
               <div className="about"><Link to="/about" style={{ textDecoration: 'none', color: 'black' }}>About</Link></div>
               <div className="contact"><Link to="/contact" style={{ textDecoration: 'none', color: 'black' }}>Contact</Link></div>

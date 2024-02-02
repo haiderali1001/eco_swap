@@ -25,11 +25,16 @@
   z-index: 0;
 }
 .meubel-house-logos-05-icon1 {
-  height: 7vh;
+  /* height: 7vh;
   width: 7vw;
   position: relative;
   object-fit: cover;
-  z-index: 1;
+  z-index: 1; */
+
+  height: 2rem;
+  width: 3.13rem;
+  position: relative;
+  object-fit: cover;
 }
 .cart1 {
   margin: 0;

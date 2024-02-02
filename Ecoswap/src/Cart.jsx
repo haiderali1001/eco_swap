@@ -19,7 +19,7 @@ function Cart(){
             <img
               className="meubel-house-logos-05-icon1"
               alt=""
-              src="/sitelogo.png"
+              src="/sitelogo2.png"
             />
             <h1 className="cart1">Cart</h1>
           </div>
