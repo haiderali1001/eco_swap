@@ -10,17 +10,17 @@ import CardSample from './components/CardSample';
 const Home = () => {
   return (
     <>
-    <div class="home">
-    <section class="banner-main">
-        <div class="banner">
-            <div class="banner-sell">
+    <div className="home">
+    <section className="banner-main">
+        <div className="banner">
+            <div className="banner-sell">
                 <p>New Arrivals</p>
                 <h1>Discover Our <br/> New Collection</h1>
             </div>
         </div>
     </section>
     <section>
-        <div class="showcase">
+        <div className="showcase">
             <h1>Browse The Range</h1>
             <h3>Lorem ipsum</h3>
             <CssBaseline />
