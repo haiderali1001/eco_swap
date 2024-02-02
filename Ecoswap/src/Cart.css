@@ -894,8 +894,8 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: 0 0 var(--padding-31xl);
-  top: 3.66vh;
-  margin-top: 4.5vh;
+  /* top: 3.66vh; */
+  /* margin-top: 4.5vh; */
 }
 @media screen and (max-width: 1325px) {
   .frame-parent {

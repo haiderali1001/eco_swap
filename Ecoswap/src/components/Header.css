@@ -15,7 +15,7 @@ cart2 */
     justify-content: flex-start;
     align-self: stretch;
     flex-direction: column;
-    padding: 3.81rem 1.69rem 6.06rem var(--padding-xl);
+    /* padding: 3.81rem 1.69rem 6.06rem var(--padding-xl); */
     position: relative;
     gap: 0.06rem;
     text-align: left;
@@ -51,7 +51,7 @@ cart2 */
     max-height: 100%;
     filter: blur(1px);
     object-fit: cover;
-    transform: scale(1.038);
+    /* transform: scale(1.038); */
   }
 
   .group-container {
