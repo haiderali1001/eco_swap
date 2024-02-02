@@ -1,11 +1,60 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import './Home.css'
-import Grid from '@mui/material/Unstable_Grid2';
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import CardSample from './components/CardSample';
+import { styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+
+
+const Item = styled(Paper)(() => ({
+  padding: 8,
+  textAlign: 'center',
+  color: 'black',
+}));
+
+const CardShowcase =  ()=>{
+  return (<>
+    <Grid container spacing={4}>
+
+    <Grid item xs={3}>
+      <Item elevation={0}><img src="/mask-group-1@2x.png" className="tripimage" /></Item>
+    </Grid>
+
+    <Grid item xs={3}>
+      <Item elevation={0}><img src="/iphone.png" className="tripimage" /></Item>
+    </Grid>
+
+    <Grid item xs={3}>
+      <Item elevation={0}><img src="/mask-group-2@2x.png" className="tripimage" /></Item>
+    </Grid>
+
+    <Grid item xs={3}>
+      <Item elevation={0}><img src="/mask-group-2@2x.png" className="tripimage" /></Item>
+    </Grid>
+
+    <Grid item xs={3}>
+      <Item elevation={0}><img src="/mask-group-2@2x.png" className="tripimage" /></Item>
+    </Grid>
+
+    <Grid item xs={3}>
+      <Item elevation={0}><img src="/mask-group-2@2x.png" className="tripimage" /></Item>
+    </Grid>
+
+    <Grid item xs={3}>
+      <Item elevation={0}><img src="/iphone.png" className="tripimage" /></Item>
+    </Grid>
+
+    <Grid item xs={3}>
+      <Item elevation={0}><img src="/mask-group-2@2x.png" className="tripimage" /></Item>
+    </Grid>
+
+    </Grid>
+  </>)
+}
 
 const Home = () => {
   return (
@@ -16,6 +65,7 @@ const Home = () => {
             <div className="banner-sell">
                 <p>New Arrivals</p>
                 <h1>Discover Our <br/> New Collection</h1>
+                <button>Explore</button>
             </div>
         </div>
     </section>
@@ -30,6 +80,11 @@ const Home = () => {
               </Box>
             </Container>
         </div>
+    </section>
+    <section>
+      <div className="product-showcase">
+        <CardShowcase/>
+      </div>
     </section>
     </div>
     </>
