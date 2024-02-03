@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import Header from './components/header';
+import Header from './components/Header';
 import Footer from './components/Footer';
 import './Contact.css'
 
