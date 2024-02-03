@@ -23,6 +23,7 @@ cart2 */
     color: var(--color-black);
     font-family: var(--font-poppins);
     margin-top: 8vh;
+    padding: 3.81rem 1.69rem 6.06rem var(--padding-xl);
   }
 
 .wrapper-rectangle-frame {
@@ -51,7 +52,7 @@ cart2 */
     max-height: 100%;
     filter: blur(1px);
     object-fit: cover;
-    /* transform: scale(1.038); */
+    transform: scale(1.038);
   }
 
   .group-container {
@@ -116,4 +117,16 @@ cart2 */
     font-weight: 300;
     display: inline-block;
     z-index: 1;
+  }
+
+  .cart1 {
+    margin: 0;
+    height: 4.5rem;
+    position: relative;
+    font-size: inherit;
+    font-weight: 500;
+    font-family: inherit;
+    display: inline-block;
+    z-index: 1;
+    margin-top: -1rem;
   }

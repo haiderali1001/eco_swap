@@ -6,7 +6,6 @@ import Header from './components/header';
 function Cart(){
   return (
     <>
-    
     <div className="cart">
     <Header/>
       <section className="home-label">

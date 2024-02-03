@@ -1,109 +1,4 @@
 
-.rectangle-frame-icon,
-.wrapper-rectangle-frame {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.rectangle-frame-icon {
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
-  filter: blur(1px);
-  object-fit: cover;
-  transform: scale(1.038);
-}
-.wrapper-rectangle-frame {
-  margin: 0 !important;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 0;
-}
-.meubel-house-logos-05-icon1 {
-  /* height: 7vh;
-  width: 7vw;
-  position: relative;
-  object-fit: cover;
-  z-index: 1; */
-
-  height: 2rem;
-  width: 3.13rem;
-  position: relative;
-  object-fit: cover;
-}
-.cart1 {
-  margin: 0;
-  height: 4.5rem;
-  position: relative;
-  font-size: inherit;
-  font-weight: 500;
-  font-family: inherit;
-  display: inline-block;
-  z-index: 1;
-  margin-top: -1rem;
-}
-.group-container,
-.meubel-house-logos {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-.group-container {
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0 0 0 0.44rem;
-}
-.home1 {
-  height: 1.5rem;
-  position: relative;
-  font-weight: 500;
-  display: inline-block;
-  z-index: 1;
-}
-.dashiconsarrow-down-alt2 {
-  height: 1.25rem;
-  width: 1.25rem;
-  position: relative;
-  overflow: hidden;
-  flex-shrink: 0;
-  object-fit: contain;
-  z-index: 1;
-}
-.cart2 {
-  height: 1.5rem;
-  position: relative;
-  font-weight: 300;
-  display: inline-block;
-  z-index: 1;
-}
-.cart-frame,
-.wrapper-rectangle-frame-parent {
- display: flex;
-  align-items: center; 
-  justify-content: flex-start;
-}
-.cart-frame {
-  flex-direction: row;
-  gap: 0.44rem;
-  font-size: var(--font-size-base);
-}
-.wrapper-rectangle-frame-parent {
-  align-self: stretch;
-  flex-direction: column;
-  padding: 3.81rem 1.69rem 6.06rem var(--padding-xl);
-  position: relative;
-  gap: 0.06rem;
-  text-align: left;
-  font-size: 3rem;
-  color: var(--color-black);
-  font-family: var(--font-poppins);
-}
 .frame-child {
   height: 32.81rem;
   width: 90rem;
@@ -430,6 +325,9 @@
   padding: 4.5rem var(--padding-81xl) 3.94rem;
   gap: var(--gap-11xl);
 }
+
+/* ----------------------------------------------------- */
+
 .home-label {
   align-self: stretch;
   padding: 0 0 1.38rem;

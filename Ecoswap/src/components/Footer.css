@@ -1,0 +1,615 @@
+.home-label {
+    align-self: stretch;
+    padding: 0 0 1.38rem;
+    text-align: left;
+    font-size: var(--font-size-base);
+    color: var(--color-black);
+    font-family: var(--font-poppins);
+  }
+  .trophy-1-icon {
+    height: 3.75rem;
+    width: 3.75rem;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .high-quality {
+    margin: 0;
+    position: relative;
+    font-size: inherit;
+    line-height: 150%;
+    font-weight: 600;
+    font-family: inherit;
+  }
+  .certified-products {
+    position: relative;
+    font-size: var(--font-size-xl);
+    line-height: 150%;
+    font-weight: 500;
+    color: var(--color-gray-3);
+  }
+  .help-text,
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-11xs);
+  }
+  .help-text {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--gap-3xs);
+  }
+  .guarantee-icon {
+    height: 3.75rem;
+    width: 3.75rem;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .email-field-child {
+    height: 5.31rem;
+    width: 5.31rem;
+    position: relative;
+    display: none;
+  }
+  .warranty-protection {
+    margin: 0;
+    position: relative;
+    font-size: inherit;
+    line-height: 150%;
+    font-weight: 600;
+    font-family: inherit;
+  }
+  .over-1-years {
+    position: relative;
+    font-size: var(--font-size-xl);
+    line-height: 150%;
+    font-weight: 500;
+    color: var(--color-gray-3);
+  }
+  .text1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-11xs);
+  }
+  .email-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-3xs);
+    max-width: 100%;
+  }
+  .shipping-icon {
+    height: 3.75rem;
+    width: 3.75rem;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .free-shipping,
+  .order-over-1000 {
+    position: relative;
+    line-height: 150%;
+  }
+  .free-shipping {
+    margin: 0;
+    font-size: inherit;
+    font-weight: 600;
+    font-family: inherit;
+  }
+  .order-over-1000 {
+    font-size: var(--font-size-xl);
+    font-weight: 500;
+    color: var(--color-gray-3);
+  }
+  .help-text1,
+  .text2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-11xs);
+  }
+  .help-text1 {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-3xs);
+  }
+  .customer-support-icon {
+    height: 3.75rem;
+    width: 3.75rem;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .dedicated-support,
+  .support {
+    position: relative;
+    line-height: 150%;
+    font-weight: 600;
+  }
+  .dedicated-support {
+    font-size: var(--font-size-xl);
+    font-weight: 500;
+    color: var(--color-gray-3);
+  }
+  .text3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-11xs);
+  }
+  .feature,
+  .help-text2 {
+    flex-direction: row;
+    align-items: center;
+  }
+  .help-text2 {
+    display: flex;
+    justify-content: flex-start;
+    gap: var(--gap-3xs);
+  }
+  .feature {
+    width: 86.25rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 var(--padding-xl);
+    gap: var(--gap-xl);
+  }
+  .feature,
+  .feature-wrapper,
+  .warranty-protection-frame {
+    display: flex;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  .feature-wrapper {
+    flex: 1;
+    background-color: #faf3ea;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding-81xl) 0;
+  }
+  .warranty-protection-frame {
+    align-self: stretch;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 0 0.5rem;
+    text-align: left;
+    font-size: var(--font-size-6xl);
+    color: var(--color-gray-100);
+    font-family: var(--font-poppins);
+  }
+  .feature-frame {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    margin: 0 !important;
+    top: 0;
+    right: 0;
+    bottom: -0.03rem;
+    left: 0;
+    background-color: var(--color-white);
+    border-top: 1px solid rgba(0, 0, 0, 0.17);
+    box-sizing: border-box;
+  }
+  .ecoswap {
+    margin: 0;
+    height: 2.25rem;
+    position: relative;
+    font-size: inherit;
+    font-weight: 700;
+    font-family: inherit;
+    display: inline-block;
+  }
+  .india,
+  .jalandhar-punjab,
+  .lovely-professional-university {
+    margin: 0;
+  }
+  .lovely-professional-university-container {
+    align-self: stretch;
+    height: 4.5rem;
+    position: relative;
+    font-size: var(--font-size-base);
+    color: var(--color-darkgray);
+    display: inline-block;
+  }
+  .footer-link {
+    width: 17.94rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 3.13rem;
+    min-width: 17.94rem;
+  }
+  .home2,
+  .links {
+    height: 1.5rem;
+    display: inline-block;
+  }
+  .about1,
+  .contact1,
+  .home2,
+  .links,
+  .shop1 {
+    position: relative;
+    font-weight: 500;
+  }
+  .about1,
+  .contact1 {
+    height: 1.5rem;
+    display: inline-block;
+  }
+  .home-group,
+  .links-parent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .home-group {
+    gap: var(--gap-26xl);
+    color: var(--color-black);
+  }
+  .links-parent {
+    padding: 0 0.13rem 0 0;
+    gap: var(--gap-36xl);
+  }
+  .help,
+  .payment-options {
+    position: relative;
+    font-weight: 500;
+  }
+  .returns {
+    height: 1.5rem;
+    display: inline-block;
+  }
+  .privacy-policies,
+  .returns {
+    position: relative;
+    font-weight: 500;
+  }
+  .payment-options-parent {
+    align-self: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: var(--gap-26xl);
+    color: var(--color-black);
+  }
+  .frame-parent1,
+  .help-parent,
+  .payment-options-parent {
+    display: flex;
+    align-items: flex-start;
+  }
+  .help-parent {
+    width: 9rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: var(--gap-36xl);
+  }
+  .frame-parent1 {
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 13.25rem;
+    gap: var(--gap-xl);
+    max-width: 100%;
+  }
+  .enter-your-email,
+  .newsletter {
+    position: relative;
+    display: inline-block;
+  }
+  .newsletter {
+    height: 1.5rem;
+    font-weight: 500;
+  }
+  .enter-your-email {
+    width: 10.81rem;
+    border: 0;
+    outline: 0;
+    font-family: var(--font-poppins);
+    font-size: var(--font-size-sm);
+    background-color: transparent;
+    height: 1.31rem;
+    color: var(--color-darkgray);
+    text-align: left;
+  }
+  .ecoswap-footer-child {
+    align-self: stretch;
+    height: 0.13rem;
+    position: relative;
+    border-top: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .ecoswap-footer {
+    height: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-10xs);
+  }
+  .subscribe {
+    height: 1.31rem;
+    position: relative;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    font-family: var(--font-poppins);
+    color: var(--color-black);
+    text-align: left;
+    display: inline-block;
+  }
+  .ecoswap-footer-item {
+    width: 4.81rem;
+    height: 0.13rem;
+    position: relative;
+    border-top: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .ecoswap-footer1 {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    height: 1.5rem;
+    flex-direction: column;
+    gap: var(--gap-10xs);
+  }
+  .ecoswap-footer-parent,
+  .ecoswap-footer1,
+  .newsletter-parent {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .ecoswap-footer-parent {
+    align-self: stretch;
+    flex-direction: row;
+    gap: 0.69rem;
+  }
+  .newsletter-parent {
+    width: 17.88rem;
+    flex-direction: column;
+    gap: 3.31rem;
+    min-width: 17.88rem;
+  }
+  .footer-link-parent,
+  .group-div {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 100%;
+  }
+  .group-div {
+    width: 44.38rem;
+    justify-content: flex-start;
+    gap: 4.25rem;
+    min-width: 44.38rem;
+    font-size: var(--font-size-base);
+    color: var(--color-darkgray);
+  }
+  .footer-link-parent {
+    width: 70.81rem;
+    justify-content: space-between;
+    gap: var(--gap-xl);
+  }
+  .line-div {
+    align-self: stretch;
+    height: 0.06rem;
+    border-top: 1px solid #d9d9d9;
+    box-sizing: border-box;
+  }
+  .ecoswap-all-rights,
+  .line-div {
+    position: relative;
+  }
+  .frame-group,
+  .line-parent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .line-parent {
+    align-self: stretch;
+    gap: 2.19rem;
+    font-size: var(--font-size-base);
+  }
+  .frame-group {
+    width: 77.5rem;
+    gap: 3rem;
+    max-width: 100%;
+    z-index: 1;
+  }
+  .cart,
+  .footer {
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .footer {
+    align-self: stretch;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 2.38rem;
+    max-width: 100%;
+    text-align: left;
+    font-size: 1.5rem;
+    color: var(--color-black);
+    font-family: var(--font-poppins);
+  }
+  .cart {
+    width: 100vw;
+    background-color: var(--color-white);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 0 var(--padding-31xl);
+    /* top: 3.66vh; */
+    /* margin-top: 4.5vh; */
+  }
+  @media screen and (max-width: 1325px) {
+    .frame-parent {
+      width: 55.28rem;
+    }
+    .rectangle-container {
+      flex: 1;
+    }
+    .rectangle-parent {
+      flex-wrap: wrap;
+    }
+  }
+  @media screen and (max-width: 1125px) {
+    .price-label {
+      padding-left: 4.44rem;
+      padding-right: var(--padding-56xl);
+      box-sizing: border-box;
+    }
+    .footer-link {
+      flex: 1;
+    }
+    .group-div {
+      flex: 1;
+      min-width: 100%;
+    }
+    .footer-link-parent {
+      flex-wrap: wrap;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .cart1 {
+      font-size: 2.38rem;
+    }
+    .checkout-label {
+      flex-wrap: wrap;
+    }
+    .product-frame {
+      min-width: 100%;
+    }
+    .cart-totals {
+      font-size: 1.63rem;
+    }
+    .rectangle-container {
+      min-width: 100%;
+    }
+    .rectangle-parent {
+      gap: 0.94rem;
+      padding: 2.94rem var(--padding-31xl) 2.56rem;
+      box-sizing: border-box;
+    }
+    .newsletter-parent {
+      flex: 1;
+    }
+    .group-div {
+      flex-wrap: wrap;
+      gap: var(--gap-15xl);
+    }
+    .line-parent {
+      gap: var(--gap-mid);
+    }
+    .frame-group {
+      gap: 1.5rem;
+    }
+    .footer {
+      padding-top: var(--padding-6xl);
+      padding-bottom: var(--padding-6xl);
+      box-sizing: border-box;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .cart1 {
+      font-size: 1.81rem;
+    }
+    .price-label {
+      padding-left: var(--padding-xl);
+      padding-right: var(--padding-xl);
+      box-sizing: border-box;
+    }
+    .checkout-label {
+      gap: var(--gap-mid);
+    }
+    .product-frame {
+      gap: 1.69rem;
+    }
+    .cart-totals {
+      font-size: var(--font-size-lgi);
+    }
+    .rs-25000002 {
+      font-size: var(--font-size-base);
+    }
+    .rectangle-container {
+      gap: var(--gap-11xl);
+      padding: var(--padding-xl) var(--padding-xl) 3.25rem;
+      box-sizing: border-box;
+    }
+    .rectangle-parent {
+      padding-left: var(--padding-xl);
+      padding-right: var(--padding-xl);
+      box-sizing: border-box;
+    }
+    .high-quality {
+      font-size: var(--font-size-xl);
+      line-height: 1.88rem;
+    }
+    .certified-products {
+      font-size: var(--font-size-base);
+      line-height: 1.5rem;
+    }
+    .warranty-protection {
+      font-size: var(--font-size-xl);
+      line-height: 1.88rem;
+    }
+    .over-1-years {
+      font-size: var(--font-size-base);
+      line-height: 1.5rem;
+    }
+    .free-shipping {
+      font-size: var(--font-size-xl);
+      line-height: 1.88rem;
+    }
+    .order-over-1000 {
+      font-size: var(--font-size-base);
+      line-height: 1.5rem;
+    }
+    .support {
+      font-size: var(--font-size-xl);
+      line-height: 1.88rem;
+    }
+    .dedicated-support {
+      font-size: var(--font-size-base);
+      line-height: 1.5rem;
+    }
+    .ecoswap {
+      font-size: var(--font-size-lgi);
+    }
+    .footer-link {
+      gap: 1.56rem;
+    }
+    .frame-parent1 {
+      flex-wrap: wrap;
+    }
+    .newsletter-parent {
+      gap: 1.63rem;
+    }
+    .group-div {
+      gap: var(--gap-mid);
+    }
+  }
+  

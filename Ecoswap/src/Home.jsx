@@ -8,7 +8,7 @@ import CardSample from './components/CardSample';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import Header from './components/header';
+import Footer from './components/Footer';
 
 
 const Item = styled(Paper)(() => ({
@@ -60,7 +60,6 @@ const CardShowcase =  ()=>{
 const Home = () => {
   return (
     <>
-    <Header/>
     <div className="home">
     <section className="banner-main">
         <div className="banner">
@@ -89,6 +88,7 @@ const Home = () => {
       </div>
     </section>
     </div>
+    <Footer/>
     </>
   )
 }
