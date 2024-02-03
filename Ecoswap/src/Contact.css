@@ -1,0 +1,64 @@
+.contactpage {
+    width: 100%;
+    height: 70vh;
+    background-color: white;
+    padding-top: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.contactpage > h2{
+    text-align: center;
+    font-family: Poppins;
+    color: black;
+    font-weight: 600;
+    flex-basis: 100%;
+}
+.contactpage >p {
+    text-align: center;
+    color: darkgray;
+    font-family: Poppins;
+    flex-basis: 100%;
+}
+.contactpage label{
+    color: black;
+    white-space: nowrap;
+}
+
+.labellz{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+}
+input[type=text], input[type=email]{
+    border: 1px solid darkgray;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    height: 50%;
+    width: 30%;
+}
+
+.formdiv {
+    width: 50vw;
+}
+
+.formdiv label{
+    width: 10%;
+}
+.formdiv button {
+    margin-left: auto;
+    margin-right: auto;
+    height: 6vh;
+    width: 10vw;
+    background-color: rgb(184, 142, 47);
+    font-family: Poppins;
+    border-radius: 3px;
+}
+
+.formdiv button:hover{
+    background-color: rgb(204, 162, 67);
+    border: none;
+}

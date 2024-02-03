@@ -5,6 +5,7 @@ import Navbar from './components/Navbar.jsx'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './index.css'
 import Cart from './Cart.jsx'
+import Contact from './Contact.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -13,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/'element={<App/>}/>
       <Route path='/*'element={<p>No route found here</p>}/>
       <Route path='/cart' element={<Cart/>}/>
-      <Route path='/contact' element={<Cart/>}/>
+      <Route path='/contact' element={<Contact/>}/>
       <Route path='/checkout' element={<Cart/>}/>
     </Routes>
   </BrowserRouter>
