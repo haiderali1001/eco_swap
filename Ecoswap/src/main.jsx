@@ -6,6 +6,10 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './index.css'
 import Cart from './Cart.jsx'
 import Contact from './Contact.jsx'
+import About from './About.jsx'
+import Shop from './Shop.jsx'
+import Login from './components/login/Login.jsx'
+import Register from './components/login/Register.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -16,6 +20,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/cart' element={<Cart/>}/>
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/checkout' element={<Cart/>}/>
+      <Route path='/about' element={<About/>}/>
+      <Route path='/profile' element={<Register/>}/>
+      <Route path='/shop' element={<Shop/>}/>
     </Routes>
   </BrowserRouter>
   // <React.StrictMode>

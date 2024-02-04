@@ -7,7 +7,7 @@ function Navbar() {
     <>
     <div className="navbar">
             <div className="header-frame">
-              <img  className="sitelogo"  loading="eager"  alt=""  src="/sitelogo2.png"/>
+              <img  className="sitelogo"  loading="eager"  alt=""  src="/sitelogo.png"/>
               <div className="title"><Link to="/">ECOSWAP</Link></div>
             </div>
             <div className="home-parent">
@@ -17,7 +17,7 @@ function Navbar() {
               <div className="contact"><Link to="/contact" style={{ textDecoration: 'none', color: 'black' }}>Contact</Link></div>
             </div>
             <div className="icon-nav">
-              <img  className="icon-profile"  loading="eager"  alt=""  src="/icon-profile.svg"/>
+              <Link to="/profile"><img  className="icon-profile"  loading="eager"  alt=""  src="/icon-profile.svg"/></Link>
               <img  className="icon-search"  loading="eager"  alt=""  src="/icon-search.svg"/>
               <img className="icon-heart"  loading="eager"  alt=""  src="/icon-heart.svg"/>
               <Link to="/cart"><img  className="icon-cart"  loading="eager"  alt=""  src="/icon-cart.svg"/></Link>

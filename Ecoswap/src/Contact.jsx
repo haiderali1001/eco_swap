@@ -31,7 +31,7 @@ const Contact = () => {
     });
     return (
         <>
-            <Header />
+            <Header headerTitle={"Contact"} />
             <div className="contactpage">
                 <h2>Get In Touch With Us</h2>
                 <p>For More Information About Our Product & Services. Please Feel Free To Drop Us<br /> An Email. Our Staff Always Be There To Help You Out. Do Not Hesitate!</p>
@@ -47,9 +47,10 @@ const Contact = () => {
                                 onBlur={formik.handleBlur}
                                 value={formik.values.firstName}
                             />
-                            {formik.touched.username && formik.errors.username ? (
-                                <div>{formik.errors.username}</div>
-                            ) : null}
+                            {/* {formik.touched.username && formik.errors.username ? (
+                                // <div>{formik.errors.username}</div>
+                                add js for alert
+                            ) : null} */}
                         </div>
 
                         <div className="labellz">
@@ -62,9 +63,9 @@ const Contact = () => {
                                 onBlur={formik.handleBlur}
                                 value={formik.values.email}
                             />
-                            {formik.touched.email && formik.errors.email ? (
+                            {/* {formik.touched.email && formik.errors.email ? (
                                 <div>{formik.errors.email}</div>
-                            ) : null}
+                            ) : null} */}
                         </div>
 
                         <div className="labellz">
@@ -77,9 +78,9 @@ const Contact = () => {
                                 onBlur={formik.handleBlur}
                                 value={formik.values.lastName}
                             />
-                            {formik.touched.subject && formik.errors.subject ? (
+                            {/* {formik.touched.subject && formik.errors.subject ? (
                                 <div>{formik.errors.subject}</div>
-                            ) : null}
+                            ) : null} */}
                         </div>
 
                         <div className="labellz">
@@ -92,15 +93,32 @@ const Contact = () => {
                                 onBlur={formik.handleBlur}
                                 value={formik.values.lastName}
                             />
-                            {formik.touched.contmsg && formik.errors.contmsg ? (
+                            {/* {formik.touched.contmsg && formik.errors.contmsg ? (
                                 <div>{formik.errors.contmsg}</div>
-                            ) : null}
+                            ) : null} */}
                         </div>
 
                         <div className="labellz">
                         <button type="submit">Submit</button>
                         </div>
                     </form>
+                </div>
+                <div className="c-info">
+                    <div className="cinfo">
+                        <img src='/location.svg'/>
+                        <h3>Address</h3>
+                        <p>LPU, Jalandhar,<br/> Punjab-144411, India</p>
+                    </div>
+                    <div className="cinfo">
+                        <img src='/phone.svg'/>
+                        <h3>Phone</h3>
+                        <p>Mobile: +(91) 546-6789 <br/> Hotline: +(91) 456-6789</p>
+                    </div>
+                    <div className="cinfo">
+                        <img src='/time.svg'/>
+                        <h3>Working Time</h3>
+                        <p>Monday-Friday: 9:00 - 22:00 <br/>Saturday-Sunday: 9:00 - 21:00</p>
+                    </div>
                 </div>
             </div>
             <Footer />

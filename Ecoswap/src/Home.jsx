@@ -15,6 +15,8 @@ const Item = styled(Paper)(() => ({
   padding: 8,
   textAlign: 'center',
   color: 'black',
+  border: '1px solid rgb(184, 142, 47)',
+  // width: '50%',
 }));
 
 const CardShowcase =  ()=>{
@@ -88,7 +90,6 @@ const Home = () => {
       </div>
     </section>
     </div>
-    <Footer/>
     </>
   )
 }

@@ -13,7 +13,7 @@ cart2 */
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    align-self: stretch;
+    /* align-self: stretch; */
     flex-direction: column;
     /* padding: 3.81rem 1.69rem 6.06rem var(--padding-xl); */
     position: relative;
@@ -22,9 +22,12 @@ cart2 */
     font-size: 3rem;
     color: var(--color-black);
     font-family: var(--font-poppins);
-    margin-top: 8vh;
+    margin-top: 8.1vh;
     padding: 3.81rem 1.69rem 6.06rem var(--padding-xl);
-    width: 100vw;
+    padding-top: 3.81 rem;
+    padding-bottom: 6.06rem;
+    width: 100%;
+    box-sizing: border-box;
     overflow: hidden;
   }
 
@@ -36,20 +39,22 @@ cart2 */
     align-items: center;
     justify-content: center;
     z-index: 0;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     position: absolute;
+    overflow: hidden;
     top: 0;
     left: 0;
+    /* height: 50vh; */
   }
 
   .rectangle-frame-icon {
-    width: 100%;
+    width: 100vw;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    max-width: 100%;
+    max-width: 99%;
     overflow: hidden;
     max-height: 100%;
     filter: blur(1px);
@@ -80,10 +85,12 @@ cart2 */
     object-fit: cover;
     z-index: 1; */
   
-    height: 2rem;
-    width: 3.13rem;
+    /* height: 2rem;
+    width: 3.13rem; */
+    width: 3rem;
     position: relative;
     object-fit: cover;
+    margin-bottom: 15px;
   }
 
   .cart-frame {

@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import './Header.css'
 
-export default function Header() {
+export default function Header({headerTitle}) {
   return (
     <>
         <section className="wrapper-rectangle-frame-parent">
@@ -18,9 +18,9 @@ export default function Header() {
             <img
               className="meubel-house-logos-05-icon1"
               alt=""
-              src="/sitelogo2.png"
+              src="/sitelogo.png"
             />
-            <h1 className="cart1">Cart</h1>
+            <h1 className="cart1">{headerTitle}</h1>
           </div>
         </div>
         <div className="cart-frame">
@@ -31,7 +31,7 @@ export default function Header() {
             alt=""
             src="/dashiconsarrowdownalt2@2x.png"
           />
-          <div className="cart2">Cart</div>
+          <div className="cart2">{headerTitle}</div>
         </div>
         </section>
     </>

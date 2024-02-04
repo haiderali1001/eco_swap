@@ -1,0 +1,18 @@
+.about-main{
+    text-align: center;
+    background-color: white;
+    height: 60vh;
+    color: black;
+    padding-left: 400px;
+    padding-right: 400px;
+    padding-top: 50px;
+}
+
+.about-main p {
+    font-family: Poppins;
+    color: darkgray;
+}
+.about-main h1 {
+    font-family: Poppins;
+    color: black;
+}

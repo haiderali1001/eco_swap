@@ -784,7 +784,7 @@
   font-family: var(--font-poppins);
 }
 .cart {
-  width: 100vw;
+  width: 100%;
   background-color: var(--color-white);
   overflow: hidden;
   display: flex;
@@ -795,6 +795,16 @@
   /* top: 3.66vh; */
   /* margin-top: 4.5vh; */
 }
+.delete-item {
+  border: none;
+  background-color: white;
+  outline: none;
+}
+.ant-designdelete-filled-icon:hover path{
+  fill: rgb(204, 162, 67);
+
+}
+
 @media screen and (max-width: 1325px) {
   .frame-parent {
     width: 55.28rem;
