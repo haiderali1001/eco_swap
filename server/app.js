@@ -6,6 +6,7 @@ const connectDB = require('./db');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const Product = require('./models/productModel.js');
+const Products = require('./products.json');//IMPORT PRODUCTS LIST AND ADD TO MONGODB
 
 dotenv.config();
 app.use(express.json());
@@ -18,34 +19,40 @@ const users = [
   { username: 'john', password: 'password123', id: 1,  },
                 { username: 'jane', password: 'password456', id: 2 } 
 ];
+// ---------------------------------------------------------------------------
+
+
+
+
 
 
 // --------------------MONGODB---------------------------------
 connectDB();
 
-const p1 = new Product({
-  name: "Viper_ultimate",
-  price: 7000,
-  pid: 1
-});
+//  PRODUCT SCHEMA
+// const p1 = new Product({
+//   "title": "Xiaomi 12 Pro",
+//   "description": "The Xiaomi 12 Pro is Xiaomi's latest flagship smartphone, with a large 6.7-inch AMOLED display, a triple-lens rear camera system with a 50MP main sensor, and the new Snapdragon 8 Gen 1 chip. It also has a fast-charging battery and a sleek design.",
+//   "price": 41199,
+//   "category": "furniture",
+//   "subcategory": "Smartphone",
+//   "outOfStock": false,
+//   "image": "https://github.com/AbhiK002/gismos/assets/68178267/13f2e192-cb9f-49cc-9d73-e8cb308ac9cb" 
+// });
 
-const p2 = new Product({
-  name: "Viper_ultimate_v2",
-  price: 10000,
-  pid: 2
-});
-
-const addProductsToDB = async () => {
+const addProductsToDB = async (p) => {
   try {
-    await p1.save();
-    console.log(`${p1.name} added successfully!`);
-    await p2.save();
-    console.log(`${p2.name} added successfully!`);
+    await p.save();
+    console.log(`${p.title} added successfully!`);
   } catch (error) {
     console.error("Error adding products:", error);
   }
 };
-addProductsToDB();
+
+// Products.products.forEach((product) => {
+//   const p = new Product(product);
+//   addProductsToDB(p);
+// });
 
 // -----------------------------ENDS MONGODB----------------------------
 
@@ -140,13 +147,13 @@ app.get("/",(req,res)=>{
 //     res.send(`Server running on port ${port} you are in products list<br> <a href="./">ROOT</a><br><a href="./profile">PROFILE</a><br><a href="./sell">SELL</a>`);
 // });
 
-app.get("/sell",(req,res)=>{
-    res.send(`Server running on port ${port} this is the selling page <br><a href="./profile">PROFILE</a><br><a href="./products">PRODUCTS</a><br><a href="./">ROOT</a>`);
-});
+// app.get("/sell",(req,res)=>{
+//     res.send(`Server running on port ${port} this is the selling page <br><a href="./profile">PROFILE</a><br><a href="./products">PRODUCTS</a><br><a href="./">ROOT</a>`);
+// });
 
-app.get("/profile",(req,res)=>{
-    res.send(`Server running on port ${port} this is your profile <br><a href="./sell">SELL</a><br><a href="./products">PRODUCTS</a><br><a href="./">ROOT</a>`);
-});
+// app.get("/profile",(req,res)=>{
+//     res.send(`Server running on port ${port} this is your profile <br><a href="./sell">SELL</a><br><a href="./products">PRODUCTS</a><br><a href="./">ROOT</a>`);
+// });
 
 
 
