@@ -100,7 +100,7 @@ app.get("/products", async (req,res)=>{
         // if(ele.subcategory == "Chargers" || ele.subcategory == "Laptop"){
         //   result.push(ele);
         // }
-        
+        console.log("fetched product");
     result.push(ele);
     });
     // console.log(productsData[0].title);
