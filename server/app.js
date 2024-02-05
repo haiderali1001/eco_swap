@@ -101,11 +101,11 @@ app.get("/products", async (req,res)=>{
         //   result.push(ele);
         // }
         console.log("fetched product", ele.title);
-    result.push(ele);
+        result.push(ele);
     });
     // console.log(productsData[0].title);
     console.log("success")
-    res.status(200).json({result:"req made"});
+    res.status(200).json(result);
 });
 
 
