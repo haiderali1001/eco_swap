@@ -11,7 +11,7 @@ const Products = require('./products.json');//IMPORT PRODUCTS LIST AND ADD TO MO
 dotenv.config();
 app.use(express.json());
 app.use(cors());
-const Port = process.env.PORT;
+// const Port = process.env.PORT;
   // Middleware to parse JSON requests
 app.use(bodyParser.json());
 
@@ -27,8 +27,9 @@ const users = [
 
 
 // --------------------MONGODB---------------------------------
+// const db = connectDB();
+// db;
 connectDB();
-
 //  PRODUCT SCHEMA
 // const p1 = new Product({
 //   "title": "Xiaomi 12 Pro",
@@ -40,19 +41,22 @@ connectDB();
 //   "image": "https://github.com/AbhiK002/gismos/assets/68178267/13f2e192-cb9f-49cc-9d73-e8cb308ac9cb" 
 // });
 
-const addProductsToDB = async (p) => {
-  try {
-    await p.save();
-    console.log(`${p.title} added successfully!`);
-  } catch (error) {
-    console.error("Error adding products:", error);
-  }
-};
+// const addProductsToDB = async (p) => {
+//   try {
+//     await p.save();
+//     console.log(`${p.title} added successfully!`);
+//   } catch (error) {
+//     console.error("Error adding products:", error);
+//   }
+// };
 
 // Products.products.forEach((product) => {
 //   const p = new Product(product);
 //   addProductsToDB(p);
 // });
+
+
+
 
 // -----------------------------ENDS MONGODB----------------------------
 
@@ -87,9 +91,21 @@ app.post('/signup', (req,res)=>{
   })
 
   //Products list
-app.get("/products",(req,res)=>{
+app.get("/products", async (req,res)=>{
     // res.send(`Server running on port ${port} you are in products list<br> <a href="./">ROOT</a><br><a href="./profile">PROFILE</a><br><a href="./sell">SELL</a>`);
-    res.status(200).json(products);
+    
+    const productsData = await Product.find();
+    let result = [];
+    productsData.map( ele => {
+        // if(ele.subcategory == "Chargers" || ele.subcategory == "Laptop"){
+        //   result.push(ele);
+        // }
+        
+    result.push(ele);
+    });
+    // console.log(productsData[0].title);
+    console.log("success")
+    // res.status(200).json(result);
 });
 
 
@@ -122,8 +138,8 @@ app.get('/cart',(req,res)=>{
     
 })
 
-app.listen(Port, (req,res)=>{
-    console.log(`Server started on port ${Port}`);
+app.listen(4000, () => {
+    console.log(`Listening on http://localhost:${4000}`);
 });
 
 
@@ -139,9 +155,9 @@ app.listen(Port, (req,res)=>{
 
 
 
-app.get("/",(req,res)=>{
-    res.send(`Server running on port ${port}<br><a href="./sell">SELL</a><br><a href="./products">PRODUCTS</a><br><a href="./profile">PROFILE</a><br><a href="./">ROOT</a>`);
-});
+// app.get("/",(req,res)=>{
+//     res.send(`Server running on port ${port}<br><a href="./sell">SELL</a><br><a href="./products">PRODUCTS</a><br><a href="./profile">PROFILE</a><br><a href="./">ROOT</a>`);
+// });
 
 // app.get("/products",(req,res)=>{
 //     res.send(`Server running on port ${port} you are in products list<br> <a href="./">ROOT</a><br><a href="./profile">PROFILE</a><br><a href="./sell">SELL</a>`);
