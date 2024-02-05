@@ -134,8 +134,14 @@ app.patch("/products/:pid", (req,res)=>{
       }
 })
 
-app.get('/cart',(req,res)=>{
+app.get('/',(req,res)=>{
+  console.log("server running succesfully")
+  res.status(200);
     
+})
+
+app.get('/healthcheck', (req,res)=>{
+  res.status(204).json({status:'successful'});
 })
 
 app.listen(Port, () => {
@@ -144,7 +150,6 @@ app.listen(Port, () => {
 
 
 
-//add email and text field spell checks
 
 
 

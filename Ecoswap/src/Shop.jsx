@@ -3,7 +3,7 @@ import './Shop.css'
 import Header from './components/Header'
 import axios from 'axios'
 
-const baseURL = "http://localhost:4000/products"
+const baseURL = "https://mystiqueapi.onrender.com/products"
 
 function Shop() {
   const [post, setPost] = React.useState(null);
