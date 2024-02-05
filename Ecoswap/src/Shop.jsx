@@ -4,12 +4,14 @@ import Header from './components/Header'
 import axios from 'axios'
 
 const baseURL = "https://mystiqueapi.onrender.com/products"
+// const baseURL = "http://localhost:3000/products"
 
 function Shop() {
   const [post, setPost] = React.useState(null);
 
   React.useEffect(() => {
     axios.get(baseURL).then((res) => {
+      console.log(res)
       const productList = res.data;
       setPost(productList);
       post.map((ele) => {
