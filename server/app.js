@@ -11,7 +11,7 @@ const Products = require('./products.json');//IMPORT PRODUCTS LIST AND ADD TO MO
 dotenv.config();
 app.use(express.json());
 app.use(cors());
-// const Port = process.env.PORT;
+const Port = process.env.PORT;
   // Middleware to parse JSON requests
 app.use(bodyParser.json());
 
@@ -138,8 +138,8 @@ app.get('/cart',(req,res)=>{
     
 })
 
-app.listen(4000, () => {
-    console.log(`Listening on http://localhost:${4000}`);
+app.listen(Port, () => {
+    console.log(`Listening on http://localhost:${Port}`);
 });
 
 
