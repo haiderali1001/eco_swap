@@ -4,6 +4,8 @@ Website Link - https://eco-swap.netlify.app/
 
 API Documentation Link - https://documenter.getpostman.com/view/32332305/2s9YymHkPm
 
+Backend Lik - https://mystiqueapi.onrender.com
+
 - Which problem Project is Solving?
 
   - The second-hand electrical appliances website faces challenges in ensuring product quality and customer trust. Efficiently managing returns, providing warranties, and adhering to legal standards for electrical appliances present additional hurdles. Balancing competitive pricing, profitability, and addressing logistics complexities are crucial considerations.

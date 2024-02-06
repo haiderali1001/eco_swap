@@ -68,7 +68,7 @@ const Home = () => {
             <div className="banner-sell">
                 <p>New Arrivals</p>
                 <h1>Discover Our <br/> New Collection</h1>
-                <button>Explore</button>
+                <Link to='/shop' style={{ textDecoration: 'none', color: 'black' }} ><button>Explore</button></Link>
             </div>
         </div>
     </section>

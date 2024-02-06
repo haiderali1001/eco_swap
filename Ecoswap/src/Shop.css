@@ -29,7 +29,8 @@
     border: 1px solid lightgray;
     aspect-ratio: 1/2;
     /* background-color: linear-gradient(to bottom, white, lightgray,  lightgray); */
-    background-color: rgb(244, 245, 247);
+    background-color: rgb(224, 225, 227);
+    /* background-image: linear-gradient(to bottom, #ffffff, darkgray); */
     display: flex;
     flex-direction: column;
     gap: 2vh;
