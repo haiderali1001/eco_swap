@@ -57,7 +57,7 @@ cart2 */
     max-width: 99%;
     overflow: hidden;
     max-height: 100%;
-    filter: blur(1px);
+    filter: blur(1px) brightness(1.5) contrast(0.3);
     object-fit: cover;
     /* transform: scale(1.038); */
   }
