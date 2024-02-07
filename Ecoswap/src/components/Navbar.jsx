@@ -16,9 +16,10 @@ function Navbar() {
   const [visibility, setVisibility] = useState("invisible");
   const [sidemenusrc, setSidemenusrc] = useState("/burger-icon.svg");
 
-  // function handleClick() {
-  //   myRef.style
-  // }
+  function handleClick() {
+    setVisibility("invisible");
+    setSidemenusrc("/burger-icon.svg");
+  }
 
   return (
     <>
@@ -52,10 +53,10 @@ function Navbar() {
           </button>
         </div>
         <div className={"side-bar " + visibility} >
-          <div className="home-nav"><Link to="/" onClick={()=>{setVisibility("invisible");}} style={{ textDecoration: 'none', color: 'black' }}>Home</Link></div>
-          <div className="shop"><Link to="/shop" style={{ textDecoration: 'none', color: 'black' }}>Shop</Link></div>
-          <div className="about"><Link to="/about" style={{ textDecoration: 'none', color: 'black' }}>About</Link></div>
-          <div className="contact"><Link to="/contact" style={{ textDecoration: 'none', color: 'black' }}>Contact</Link></div>
+          <div className="home-nav"><Link to="/" onClick={handleClick} style={{ textDecoration: 'none', color: 'black' }}>Home</Link></div>
+          <div className="shop"><Link to="/shop" onClick={handleClick} style={{ textDecoration: 'none', color: 'black' }}>Shop</Link></div>
+          <div className="about"><Link to="/about" onClick={handleClick} style={{ textDecoration: 'none', color: 'black' }}>About</Link></div>
+          <div className="contact"><Link to="/contact" onClick={handleClick} style={{ textDecoration: 'none', color: 'black' }}>Contact</Link></div>
         </div>
       </div>
     </>

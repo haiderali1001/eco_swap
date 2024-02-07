@@ -6,7 +6,9 @@ import Header from '../Header';
 import axios from 'axios';
 import { toast } from "react-toastify";
 
-const baseURL = "https://mystiqueapi.onrender.com/signup"
+const baseURL = "http://localhost:3000/signup"
+
+// const baseURL = "https://mystiqueapi.onrender.com/signup"
 
 const Register = () => {
 

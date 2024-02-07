@@ -1,6 +1,6 @@
 import React from 'react'
 import './Shop.css'
-import Header from './components/Header'
+import Header from './Header'
 import axios from 'axios'
 
 const baseURL = "https://mystiqueapi.onrender.com/products"
