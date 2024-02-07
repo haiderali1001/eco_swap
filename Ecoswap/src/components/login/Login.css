@@ -26,7 +26,7 @@
     justify-content: space-between;
     height: 10vh;
 }
-.loginformdiv [type=text], .loginformdiv input[type=email]{
+.loginformdiv [type=text], .loginformdiv input[type=email], .loginformdiv input[type=password]{
     border: 1px solid darkgray;
     background-color: white;
     color: black;

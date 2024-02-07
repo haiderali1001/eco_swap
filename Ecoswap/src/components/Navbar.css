@@ -49,8 +49,8 @@
   }
  
   /* .home-nav {
-    /* height: 1.5rem; */
-    /* display: inline-block; */
+    height: 1.5rem;
+    display: inline-block; 
   } */
   .about,
   .contact,
@@ -79,7 +79,8 @@
   .icon-heart,
   .icon-search,
   .icon-cart,
-  .icon-profile {
+  .icon-profile, 
+  .side-menu {
     height: 1.75rem;
     width: 1.75rem;
     position: relative;
@@ -88,25 +89,95 @@
     min-height: 1.75rem;
     transition: 200ms ease-in;
   }
+  .side-menu{
+    z-index: 4;
+  }
   .icon-nav img:hover{
     transform: scale(1.2);
   }
   .icon-nav {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     margin-right: 10px;
     gap: var(--gap-26xl);
   }
 
+  .side-bar{
+    height: 100vh;
+    width: 100%;
+    max-width: 600px;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    background-color: white;
+    right: 0;
+    transition: ease-in-out 400ms;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    padding-top: 5rem;
+  }
+
+  .side-bar > div{
+    font-family: Poppins;
+    font-size:64px;
+  }
+  .side-bar > div:hover{
+    background-color: lightgray;
+  }
+
+  /* .side-bar a:hover{
+    color: orange;
+  } */
+
+  .invisible{
+    opacity: 0;
+    transform: translateX(100%);
+    z-index: -1;
+  }
+  .visible{
+    opacity: 1;
+    transform: translateX(0%);
+    z-index: 3;
+  }
+.side-menu-btn{
+  padding: 0;
+  display: none;
+
+}
+  .icon-nav button:focus, .icon-nav button:active{
+    border: none;
+  }
+
+
   @media screen and (max-width: 825px) {
     .home-parent {
       display: none;
+    }
+    .side-menu-btn{
+      display: block;
     }
   }
   @media screen and (max-width: 925px) {
     .home-parent {
       width: 16rem;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .home-parent {
+      display: none;
+    }
+    .side-menu{
+      display: block;
+    }
+    .icon-nav{
+      gap: 1.5rem;
+    }
+    .icon-heart{
+      display: none;
     }
   }
