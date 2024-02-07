@@ -121,8 +121,8 @@
 {
     .card-pro{
         flex-basis: 90%;
-        /* aspect-ratio: 1/2; */
-        height: 70vh;
+        aspect-ratio: 2/3;
+        /* height: 70vh; */
         max-width: 90%;
         gap: 1vh;
     }

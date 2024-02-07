@@ -5,7 +5,7 @@ const userSchema = mongoose.Schema({
         type: String,
         required : true
     },
-    eMail :{
+    email :{
         type : String,
         required : true,
         unique : true
@@ -16,6 +16,9 @@ const userSchema = mongoose.Schema({
     },
     cart: {
         type: Array
+    },
+    wishlist:{
+        type: Array,
     }}, {timestamps: true});
 
 const User = mongoose.model("User", userSchema);

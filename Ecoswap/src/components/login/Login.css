@@ -57,6 +57,7 @@
     background-color: rgb(184, 142, 47);
     font-family: Poppins;
     border-radius: 3px;
+    outline: none;
 }
 
 .loginformdiv button:hover{

@@ -1,13 +1,13 @@
 const express = require("express");
 const app = express();
 const bodyParser = require('body-parser');
-const cors = require("cors"); 
+const cors = require("cors");
 const connectDB = require('./db');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const Product = require('./models/productModel.js');
 const Products = require('./products.json');//IMPORT PRODUCTS LIST AND ADD TO MONGODB
-const User = require('./models./userModel.js');
+const User = require('./models/userModel.js');
 
 dotenv.config();//environment variable initialise
 app.use(express.json());//json parser
@@ -15,111 +15,108 @@ app.use(cors());//cross origin resource server
 const Port = process.env.PORT;
 app.use(bodyParser.json()); // Middleware to parse JSON requests
 
-const users = [ 
-  { name: 'john',eMail:'abc@gmail.com', password: 'password123', cart:[]  },
+const users = [
+  { name: 'john', eMail: 'abc@gmail.com', password: 'password123', cart: [], wishlist: [] },
 ];//user schema
 // ---------------------------------------------------------------------------
 
-
-
-
-
-
 // --------------------MONGODB---------------------------------
 connectDB();
-
-
-
-
-
 // -----------------------------ENDS MONGODB----------------------------
-
-
-  // Login endpoint
+// Login endpoint
 app.post('/login', (req, res) => {
-    const { username, password } = req.body;
-    // Check if username and password are provided
-    if (!username || !password) {
-      return res.status(400).json({ error: 'Username and password are required' });
-    }
-    // Check if the user exists
-    const user = users.find((u) => u.username === username && u.password === password);  
-    if (!user) {
-      return res.status(401).json({ error: 'Invalid credentials' });
-    }
-    // In a real-world scenario, you might generate a token here and send it to the client
-    res.json({ message: 'Login successful', userId: user.id });
+  const { username, password } = req.body;
+  // Check if username and password are provided
+  if (!username || !password) {
+    return res.status(400).json({ error: 'Username and password are required' });
+  }
+  // Check if the user exists
+  const user = users.find((u) => u.username === username && u.password === password);
+  if (!user) {
+    return res.status(401).json({ error: 'Invalid credentials' });
+  }
+  // In a real-world scenario, you might generate a token here and send it to the client
+  res.json({ message: 'Login successful', userId: user.id });
+});
+
+
+// ------------------------------------Signup------------------------- 
+const addUserToDB = async (u) => {
+  try {
+    await u.save();
+    console.log(`${u.name} added successfully!`);
+  } catch (error) {
+    console.error("Error adding User:", error);
+  }
+};
+
+app.post('/signup', (req, res) => {
+  const { name, email, password } = req.body;
+  if (!name || !password || !email) {
+    return res.status(400).json({ error: 'Enter Complete Details' });
+  }
+
+  const user = new User({"name":name, "email":email, "password":password})
+  addUserToDB(user);
+  return res.status(200).json({ success: `You have succesfully registered. Your email is ${email}` });
+})
+
+//Products list
+app.get("/products", async (req, res) => {
+  // res.send(`Server running on port ${port} you are in products list<br> <a href="./">ROOT</a><br><a href="./profile">PROFILE</a><br><a href="./sell">SELL</a>`);
+
+  const productsData = await Product.find();
+  let result = [];
+  productsData.map(ele => {
+    // if(ele.subcategory == "Chargers" || ele.subcategory == "Laptop"){
+    //   result.push(ele);
+    // }
+    console.log("fetched product", ele.title);
+    result.push(ele);
   });
-
-
- //Signup 
-app.post('/signup', (req,res)=>{
-    const {username, password} = req.body;
-    if (!username || !password) {
-        return res.status(400).json({ error: 'Enter Complete Details' });
-      }
-    const id = users.length+1;
-    const details = {"username": username, "password": password, "id":id};
-    users.push(details);
-    return res.status(200).json({success: `You have succesfully registered. Your id is ${id}`});
-  })
-
-  //Products list
-app.get("/products", async (req,res)=>{
-    // res.send(`Server running on port ${port} you are in products list<br> <a href="./">ROOT</a><br><a href="./profile">PROFILE</a><br><a href="./sell">SELL</a>`);
-    
-    const productsData = await Product.find();
-    let result = [];
-    productsData.map( ele => {
-        // if(ele.subcategory == "Chargers" || ele.subcategory == "Laptop"){
-        //   result.push(ele);
-        // }
-        console.log("fetched product", ele.title);
-        result.push(ele);
-    });
-    // console.log(productsData[0].title);
-    console.log("success")
-    res.status(200).json(result);
+  // console.log(productsData[0].title);
+  console.log("success")
+  res.status(200).json(result);
 });
 
 
 //Delete a product
-app.delete("/products/:pid",(req,res)=>{
-    const productId = parseInt(req.params.pid);
-    const index = products.findIndex(product => product.pid === productId);
-    if (index !== -1) {
-        products.splice(index, 1);
-        res.status(200).json({ message: 'Product deleted successfully' });
+app.delete("/products/:pid", (req, res) => {
+  const productId = parseInt(req.params.pid);
+  const index = products.findIndex(product => product.pid === productId);
+  if (index !== -1) {
+    products.splice(index, 1);
+    res.status(200).json({ message: 'Product deleted successfully' });
   } else {
     res.status(404).json({ error: 'Product not found' });
   }
 })
 
 //Change pricing of product
-app.patch("/products/:pid", (req,res)=>{
-    const productId = parseInt(req.params.pid);
-    const product = products.find(product => product.pid === productId);
-    const newPrice = parseInt(req.body.price);
-    if (product) {
-        product.price = newPrice;
-        res.json({ message: 'Product price updated successfully', product });
-      } else {
-        res.status(404).json({ error: 'Product not found' });
-      }
+app.patch("/products/:pid", (req, res) => {
+  const productId = parseInt(req.params.pid);
+  const product = products.find(product => product.pid === productId);
+  const newPrice = parseInt(req.body.price);
+  if (product) {
+    product.price = newPrice;
+    res.json({ message: 'Product price updated successfully', product });
+  } else {
+    res.status(404).json({ error: 'Product not found' });
+  }
 })
 
-app.get('/',(req,res)=>{
+app.get('/', (req, res) => {
   console.log("server running succesfully")
   res.status(200);
-    
+
 })
 
-app.get('/healthcheck', (req,res)=>{
-  res.status(204).json({status:'successful'});
+app.get('/healthcheck', (req, res) => {
+  res.status(204).json({ status: 'successful' });
 })
 
 app.listen(Port, () => {
-    console.log(`Listening on http://localhost:${Port}`);
+  console.log(`Listening on http://localhost:${Port}`);
 });
 
 
