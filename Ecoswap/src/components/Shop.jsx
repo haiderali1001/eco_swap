@@ -20,9 +20,9 @@ function Shop() {
     });
   }, []);
 
-  function addToCart(){
-    axios.patch
-  }
+  // function addToCart(){
+  //   axios.patch
+  // }
 
   if (!post) return null;
 
