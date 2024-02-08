@@ -12,20 +12,8 @@ import Login from './components/login/Login.jsx'
 import Register from './components/login/Register.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-    <Navbar/>
-    <Routes>
-      <Route path='/'element={<App/>}/>
-      <Route path='/*'element={<p>No route found here</p>}/>
-      <Route path='/cart' element={<Cart/>}/>
-      <Route path='/contact' element={<Contact/>}/>
-      <Route path='/checkout' element={<Cart/>}/>
-      <Route path='/about' element={<About/>}/>
-      <Route path='/profile' element={<Register/>}/>
-      <Route path='/shop' element={<Shop/>}/>
-    </Routes>
-  </BrowserRouter>
-  // <React.StrictMode>
-  //   <App />
-  // </React.StrictMode>,
+  
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
 )

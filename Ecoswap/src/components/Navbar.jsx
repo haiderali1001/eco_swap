@@ -3,18 +3,13 @@ import './Navbar.css'
 import { Link } from 'react-router-dom'
 import { useRef } from 'react';
 import { useState, useEffect } from 'react';
-// import { slide as Menu } from 'react-burger-menu'
 
-// class Example extends React.Component {
-//   showSettings (event) {
-//     event.preventDefault();
-//   }}
-
-
-function Navbar() {
+function Navbar({profileicon}) {
   const myRef = useRef(null);
   const [visibility, setVisibility] = useState("invisible");
   const [sidemenusrc, setSidemenusrc] = useState("/burger-icon.svg");
+  
+  // const [profilesrc, setProfilesrc] = useState("/icon-profile.svg");
 
   function handleClick() {
     setVisibility("invisible");
@@ -35,7 +30,7 @@ function Navbar() {
           <div className="contact"><Link to="/contact" style={{ textDecoration: 'none', color: 'black' }}>Contact</Link></div>
         </div>
         <div className="icon-nav">
-          <Link to="/profile"><img draggable='false' className="icon-profile" loading="eager" alt="" src="/icon-profile.svg" /></Link>
+          <Link to="/profile"><img draggable='false' className="icon-profile" loading="eager" alt="" src={profileicon} /></Link>
           <img draggable='false' className="icon-search" loading="eager" alt="" src="/icon-search.svg" />
           <img draggable='false' className="icon-heart" loading="eager" alt="" src="/icon-heart.svg" />
           <Link to="/cart"><img draggable='false' className="icon-cart" loading="eager" alt="" src="/icon-cart.svg" /></Link>

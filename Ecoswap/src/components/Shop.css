@@ -79,6 +79,8 @@
     background-color: white;
     color: rgb(184, 142, 47);
     outline: 0;
+    box-sizing: border-box;
+    font-size: 70%;
 }
 .add-cart-btn:hover{
     color: rgb(204, 162, 67);

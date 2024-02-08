@@ -4,13 +4,20 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Header from '../Header';
 import axios from 'axios';
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from "react-router-dom";
 
 // const baseURL = "http://localhost:3000/signup"
 
-const baseURL = "https://mystiqueapi.onrender.com/signup"
+const baseURL = "https://mystiqueapi.onrender.com/signup";
 
-const Register = () => {
+const Register = ({change}) => {
+    const navigate = useNavigate();
+
+    function goHome() {
+        navigate("/shop");
+    }
 
     const formik = useFormik({
         initialValues: {
@@ -34,6 +41,9 @@ const Register = () => {
             axios.post(baseURL, { "name": values.name, "email": values.email, "password": values.password })
                 .then((res) => {
                     console.log(res.data);
+                    toast.success("Registered Successfully!");
+                    change();
+                    setTimeout(goHome, 5000);
                 })
                 .catch((err) => {
                     console.log(err.response ? err.response.data.message : "Some error occurred");
@@ -43,6 +53,7 @@ const Register = () => {
 
     return (
         <>
+            <ToastContainer />
             <Header headerTitle={"Register"} />
             <div className="loginpage">
                 {/* <h1>Login</h1> */}
