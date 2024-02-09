@@ -5,9 +5,9 @@ const cors = require("cors");
 const connectDB = require('./db');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const Product = require('./models/productModel.js');
+const Product = require('./models/productModel.js');//product schema import
 const Products = require('./products.json');//IMPORT PRODUCTS LIST AND ADD TO MONGODB
-const User = require('./models/userModel.js');
+const User = require('./models/userModel.js');//user schema import
 
 dotenv.config();//environment variable initialise
 app.use(express.json());//json parser
@@ -50,14 +50,14 @@ const addUserToDB = async (u) => {
   }
 };
 
-app.post('/signup', (req, res) => {
+app.post('/signup', async (req, res) => {
   const { name, email, password } = req.body;
   if (!name || !password || !email) {
     return res.status(400).json({ error: 'Enter Complete Details' });
   }
 
-  const user = new User({"name":name, "email":email, "password":password})
-  addUserToDB(user);
+  const user = new User({ "name": name, "email": email, "password": password })
+  await addUserToDB(user);
   return res.status(200).json({ success: `You have succesfully registered. Your email is ${email}` });
 })
 
@@ -92,10 +92,51 @@ app.delete("/products/:pid", (req, res) => {
   }
 })
 
+//add to cart
+app.patch("/products/:pid/:uid", async (req, res) => {
+  console.log(req.params);
+  try {
+    const uid = req.params.uid;
+    const pid = req.params.pid;
+
+    // Find the user by uid
+    const user = await User.findOne({'_id':uid});
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Push the pid into the user's cart array
+    user.cart.push(pid);
+
+    // Save the updated user document
+    await user.save();
+
+    res.status(200).json({ message: `Product added to cart successfully ${user.name}` });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+  // const productId = req.params.pid;
+  // const product = await Product.find(product => product._id === productId).catch(err => {console.log(err)});
+  // console.log("hi");
+  // if(product){
+  //   const userId = req.params.uid;
+  //   const user = User.find(user => {user._id === userId}).catch(err => {console.log(err)});
+  //   user.cart.push(productId);
+  //   res.status(200).json({success: `product added to cart ${product.title} of user ${user.name}`});
+  // }
+  // else{
+  //   res.status(404).json({error:"product not found "});
+  // }
+
+
+
 //Change pricing of product
 app.patch("/products/:pid", (req, res) => {
   const productId = parseInt(req.params.pid);
-  const product = products.find(product => product.pid === productId);
+  const product = Product.find(product => product._id === productId);
   const newPrice = parseInt(req.body.price);
   if (product) {
     product.price = newPrice;

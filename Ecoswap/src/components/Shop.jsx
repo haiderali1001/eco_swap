@@ -2,15 +2,17 @@ import React from 'react'
 import './Shop.css'
 import Header from './Header'
 import axios from 'axios'
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
-const baseURL = "https://mystiqueapi.onrender.com/products"
-// const baseURL = "http://localhost:3000/products"
+// const baseURL = "https://mystiqueapi.onrender.com"
+const baseURL = "http://localhost:3000"
 
 function Shop() {
   const [post, setPost] = React.useState([]);
 
   React.useEffect(() => {
-    axios.get(baseURL).then((res) => {
+    axios.get(`${baseURL}/products`).then((res) => {
       console.log(res);
       const productList = res.data;
       setPost(productList);
@@ -20,13 +22,22 @@ function Shop() {
     });
   }, []);
 
-  // function addToCart(){
-  //   axios.patch
-  // }
+  const addToCart = async (p_id, u_id, p_name) => {
+    try{await axios.patch(`${baseURL}/products/${p_id}/${u_id}`, {pid : p_id}).then((res)=>{
+      console.log(res.data);
+      toast.success(`${p_name} has been added to the cart successfully`);
+    }).catch((err)=>{
+
+    })} catch(error){
+      console.log(error);
+    }
+  }
 
   if (!post) return null;
 
   return (
+    <>
+    <ToastContainer />
     <div className='shop'>
       <Header headerTitle={"Shop"} />
       <div className="filter-bar">Sort functionality is being added</div>
@@ -37,7 +48,10 @@ function Shop() {
             return (
               <div key={ele._id} className='card-pro'>
                 <div className='pro-overlay'>
-                  <button className='add-cart-btn'>Add to cart</button>
+                  <button className='add-cart-btn' onClick={()=>{
+                    addToCart(ele._id, "65c49929eb50c4f65c871069", ele.title);
+                    console.log("tang mt kr bhai");
+                  }}>Add to cart</button>
                 </div>
                 <img src={ele.image} />
                 {/* <div className="dark-bg-card"> */}
@@ -53,6 +67,7 @@ function Shop() {
       </div>
 
     </div>
+    </>
   );
 }
 

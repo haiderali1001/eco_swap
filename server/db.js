@@ -15,7 +15,6 @@ const connectDB = async () => {
 
   module.exports = connectDB;
 
-  // `mongodb+srv://haiderali1001haider:Tb5PPrSEk5MXtb5A@cluster0.yfwdetw.mongodb.net/?retryWrites=true&w=majority`
         // `mongodb://127.0.0.1:27017/Ecoswap`
 // ----------------------------------------------------------------------------
 // -------------------------adding product api call---------------------

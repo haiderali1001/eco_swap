@@ -33,8 +33,8 @@ const Register = ({change}) => {
         onSubmit: (values) => {
             // e.preventDefault();
 
-            // if (values.name.trim().length < 1 || values.email.trim().length < 1 || values.pass.length < 1) {
-            //     toast.warning("Please fill all the details");
+            // if (values.name.trim().length < 1 || values.email.trim().length < 1 || values.password.length < 1) {
+            //     toast.warning("Please fill me up");
             //     return;
             // }
 
