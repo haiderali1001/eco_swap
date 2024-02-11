@@ -4,12 +4,17 @@ import { Link } from 'react-router-dom'
 import { useRef } from 'react';
 import { useState, useEffect } from 'react';
 
-function Navbar({profileicon}) {
+function Navbar({ profileicon, userdetails, ogproducts }) {
   const myRef = useRef(null);
   const [visibility, setVisibility] = useState("invisible");
   const [sidemenusrc, setSidemenusrc] = useState("/burger-icon.svg");
-  
-  // const [profilesrc, setProfilesrc] = useState("/icon-profile.svg");
+  const [cbvisible, setCbvisible] = useState("cb-invisible");
+  const [carticonsrc, setCarticonsrc] = useState("/icon-cart.svg");
+
+
+  function findObjectById(objects, id) {
+    return objects.find(obj => obj._id === id);
+}
 
   function handleClick() {
     setVisibility("invisible");
@@ -33,7 +38,16 @@ function Navbar({profileicon}) {
           <Link to="/profile"><img draggable='false' className="icon-profile" loading="eager" alt="" src={profileicon} /></Link>
           <img draggable='false' className="icon-search" loading="eager" alt="" src="/icon-search.svg" />
           <img draggable='false' className="icon-heart" loading="eager" alt="" src="/icon-heart.svg" />
-          <Link to="/cart"><img draggable='false' className="icon-cart" loading="eager" alt="" src="/icon-cart.svg" /></Link>
+          <Link to="/cart" className='csbar' onClick={() => {
+            if (cbvisible === "cb-invisible") {
+              setCbvisible("cb-visible");
+              setCarticonsrc("/cart-close.svg");
+            }
+            else {
+              setCbvisible("cb-invisible");
+              setCarticonsrc("/icon-cart.svg");
+            }
+          }}><img draggable='false' className="icon-cart" loading="eager" alt="" src={carticonsrc} /></Link>
           <button className='side-menu-btn' style={{ backgroundColor: 'transparent', border: 'none', outline: 'none' }} onClick={() => {
             if (visibility === "invisible") {
               setVisibility("visibile");
@@ -46,6 +60,21 @@ function Navbar({profileicon}) {
           }}>
             <img draggable='false' className="side-menu" loading="eager" alt="" src={sidemenusrc} />
           </button>
+        </div>
+        <div className={`cart-sidebar ${cbvisible}`}>
+          <div className="cbar-title">
+            <h3>Shopping Cart</h3>
+            {(userdetails.cart && ogproducts.length > 0) ?
+              userdetails.cart.map((ele, index) => {
+                const p = findObjectById(ogproducts, ele);
+                return (
+                  <div className="nav-cart-item" key={index}>
+                    <h4>{p.title}</h4>
+                  </div>
+                )
+              }) : null
+            }
+          </div>
         </div>
         <div className={"side-bar " + visibility} >
           <div className="home-nav"><Link to="/" onClick={handleClick} style={{ textDecoration: 'none', color: 'black' }}>Home</Link></div>

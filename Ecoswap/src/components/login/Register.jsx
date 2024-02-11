@@ -7,6 +7,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 // const baseURL = "http://localhost:3000/signup"
 
@@ -43,17 +44,16 @@ const Register = ({change}) => {
                     console.log(res.data);
                     toast.success("Registered Successfully!");
                     change();
-                    setTimeout(goHome, 5000);
+                    setTimeout(goHome, 2000);
                 })
                 .catch((err) => {
-                    console.log(err.response ? err.response.data.message : "Some error occurred");
+                    console.log(err.response ? err.response.data : "Some error occurred");
                 })
         }
     });
 
     return (
-        <>
-            <ToastContainer />
+        <> 
             <Header headerTitle={"Register"} />
             <div className="loginpage">
                 {/* <h1>Login</h1> */}
@@ -111,6 +111,7 @@ const Register = ({change}) => {
                         <div className="labellz">
                             <button type="submit" >Register</button>
                         </div>
+                        <Link className='regloginlink' to='/profile' style={{ textDecoration: 'none', color: 'black', fontFamily: 'Poppins', fontSize: '2vh', textAlign: 'center' }}>Already have an account<br/>Login Instead</Link>
                     </form>
                 </div>
             </div>

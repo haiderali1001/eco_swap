@@ -83,6 +83,10 @@
   --br-mini: 15px;
   --br-8xs: 5px;
 }
+*{
+  margin: 0;
+  padding: 0;
+}
 
 a {
   font-weight: 500;

@@ -9,6 +9,7 @@ import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Footer from './components/Footer';
+import {useNavigate } from "react-router-dom";
 
 
 const Item = styled(Paper)(() => ({
@@ -60,6 +61,8 @@ const CardShowcase =  ()=>{
 }
 
 const Home = () => {
+
+  const navigate = useNavigate();
   return (
     <>
     <div className="home">
@@ -68,7 +71,7 @@ const Home = () => {
             <div className="banner-sell">
                 <p>New Arrivals</p>
                 <h1>Discover Our <br/> New Collection</h1>
-                <Link to='/shop' style={{ textDecoration: 'none', color: 'black' }} ><button>Explore</button></Link>
+                <button className='explore' onClick={()=>{navigate("/shop");}}>Explore</button>
             </div>
         </div>
     </section>

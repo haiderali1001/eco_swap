@@ -65,18 +65,25 @@ body{
     color: gray;
 }
 
-@media screen and (max-width: 825px) {
+.tripimage{
+    object-fit: contain;
+}
+
+@media screen and (max-width: 1000px) {
     .banner-sell h1 {
-      display: none;
+        font-size: 1.5rem;
+        display: none;
     }
     .banner-sell {
         top: 60vh;
-        height: 30%;
+        height: 25%;
         left: 15%;
+        text-align: center;
+        /* display: none; */
     }
     .banner-sell > button {
         height: 40%;
-        width: 50%;
+        width: 90%;
     }
 
   }

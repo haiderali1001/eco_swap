@@ -8,12 +8,18 @@ const dotenv = require('dotenv');
 const Product = require('./models/productModel.js');//product schema import
 const Products = require('./products.json');//IMPORT PRODUCTS LIST AND ADD TO MONGODB
 const User = require('./models/userModel.js');//user schema import
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const cookieParser = require('cookie-parser')
 
 dotenv.config();//environment variable initialise
 app.use(express.json());//json parser
 app.use(cors());//cross origin resource server
 const Port = process.env.PORT;
 app.use(bodyParser.json()); // Middleware to parse JSON requests
+app.use(cookieParser());
+
+const SECRET = process.env.SECRET;
 
 const users = [
   { name: 'john', eMail: 'abc@gmail.com', password: 'password123', cart: [], wishlist: [] },
@@ -23,41 +29,115 @@ const users = [
 // --------------------MONGODB---------------------------------
 connectDB();
 // -----------------------------ENDS MONGODB----------------------------
+//----------------------login endpoint with token-----------------
+app.post('/logintoken', async (req, res) => {
+  //check if token is there or not
+  const { logintoken } = req.body;
+  // console.log("hi m hu login k token "+logintoken)
+  if (logintoken != "null") {
+
+    jwt.verify(logintoken, SECRET, async (err, decodedToken) => {
+      if (err) {
+        return res.status(401).json({
+          error: err.name,
+          message: "unauthorised access: " + err.message,
+          relogin: true,
+          valid: false
+        })
+      }
+      const useridFromToken = decodedToken.id;
+      const userFromToken = await User.findById(useridFromToken);
+      if (!userFromToken) {
+        return res.status(401).json({ "status": "Login credentials expired" });
+      }
+      return res.status(200).json({
+        success: true,
+        token: logintoken,
+        userid: userFromToken._id,
+        username: userFromToken.name,
+        cart: userFromToken.cart,
+        email: userFromToken.email
+      });
+    })
+  }
+})
+// --------------login end point with userdetails
 // Login endpoint
-app.post('/login', (req, res) => {
-  const { username, password } = req.body;
+app.post('/login', async (req, res) => {
+
+  //get data from body
+  const { email, password } = req.body;
   // Check if username and password are provided
-  if (!username || !password) {
+  if (!email || !password) {
     return res.status(400).json({ error: 'Username and password are required' });
   }
   // Check if the user exists
-  const user = users.find((u) => u.username === username && u.password === password);
+  const user = await User.findOne({ email });
   if (!user) {
     return res.status(401).json({ error: 'Invalid credentials' });
   }
-  // In a real-world scenario, you might generate a token here and send it to the client
-  res.json({ message: 'Login successful', userId: user.id });
-});
+  //compare password
 
+  if (user && (await bcrypt.compare(password, user.password))) {
+    const token = jwt.sign(
+      { id: user._id, email: email },
+      SECRET,
+      { expiresIn: '2h' }
+    );
 
-// ------------------------------------Signup------------------------- 
-const addUserToDB = async (u) => {
-  try {
-    await u.save();
-    console.log(`${u.name} added successfully!`);
-  } catch (error) {
-    console.error("Error adding User:", error);
+    user.token = token;
+    user.password = undefined;
+    //cookie section
+    const options = {
+      expires: new Date(Date.now() + 36 * 60 * 60 * 1000),
+      httpOnly: true
+    };
+
+    //send token to user
+    res.status(200).cookie("token", token, options).json({ success: true, token, userid: user._id, username: user.name, cart: user.cart, email: email });
   }
-};
-
+  else {
+    res.status(401).json({ error: "Wrong password" });
+  }
+});
+// ------------------------------------Signup------------------------- 
+// const addUserToDB = async (u) => {
+//   try {
+//     await u.save();
+//     console.log(`${u.name} added successfully!`);
+//   } catch (error) {
+//     console.error("Error adding User:", error);
+//   }
+// };
+//user signup
 app.post('/signup', async (req, res) => {
   const { name, email, password } = req.body;
   if (!name || !password || !email) {
     return res.status(400).json({ error: 'Enter Complete Details' });
   }
+  const existingUser = await User.findOne({ email });
+  if (existingUser) {
+    res.status(404).send({ failure: 'User already exists' });
+    return;
+  }
+  //encryption of password
+  const encPassword = await bcrypt.hash(password, 10);
 
-  const user = new User({ "name": name, "email": email, "password": password })
-  await addUserToDB(user);
+  //saving user to database
+  const user = await User.create({ "name": name, "email": email, "password": encPassword })
+  // await addUserToDB(user);
+
+  //generate token
+  const token = jwt.sign(
+    { id: user._id, email: email },
+    SECRET,
+    {
+      expiresIn: '2h'
+    }
+  );
+  user.token = token;
+  user.password = undefined;
+
   return res.status(200).json({ success: `You have succesfully registered. Your email is ${email}` });
 })
 
@@ -71,11 +151,10 @@ app.get("/products", async (req, res) => {
     // if(ele.subcategory == "Chargers" || ele.subcategory == "Laptop"){
     //   result.push(ele);
     // }
-    console.log("fetched product", ele.title);
+    // console.log("fetched product", ele.title);
     result.push(ele);
   });
   // console.log(productsData[0].title);
-  console.log("success")
   res.status(200).json(result);
 });
 
@@ -94,13 +173,13 @@ app.delete("/products/:pid", (req, res) => {
 
 //add to cart
 app.patch("/products/:pid/:uid", async (req, res) => {
-  console.log(req.params);
+  // console.log(req.params);
   try {
     const uid = req.params.uid;
     const pid = req.params.pid;
 
     // Find the user by uid
-    const user = await User.findOne({'_id':uid});
+    const user = await User.findOne({ '_id': uid });
 
     if (!user) {
       return res.status(404).json({ error: 'User not found' });
@@ -118,22 +197,23 @@ app.patch("/products/:pid/:uid", async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
-  // const productId = req.params.pid;
-  // const product = await Product.find(product => product._id === productId).catch(err => {console.log(err)});
-  // console.log("hi");
-  // if(product){
-  //   const userId = req.params.uid;
-  //   const user = User.find(user => {user._id === userId}).catch(err => {console.log(err)});
-  //   user.cart.push(productId);
-  //   res.status(200).json({success: `product added to cart ${product.title} of user ${user.name}`});
-  // }
-  // else{
-  //   res.status(404).json({error:"product not found "});
-  // }
+// const productId = req.params.pid;
+// const product = await Product.find(product => product._id === productId).catch(err => {console.log(err)});
+// console.log("hi");
+// if(product){
+//   const userId = req.params.uid;
+//   const user = User.find(user => {user._id === userId}).catch(err => {console.log(err)});
+//   user.cart.push(productId);
+//   res.status(200).json({success: `product added to cart ${product.title} of user ${user.name}`});
+// }
+// else{
+//   res.status(404).json({error:"product not found "});
+// }
 
 
 
 //Change pricing of product
+//price updation call
 app.patch("/products/:pid", (req, res) => {
   const productId = parseInt(req.params.pid);
   const product = Product.find(product => product._id === productId);
@@ -159,35 +239,3 @@ app.get('/healthcheck', (req, res) => {
 app.listen(Port, () => {
   console.log(`Listening on http://localhost:${Port}`);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-// app.get("/",(req,res)=>{
-//     res.send(`Server running on port ${port}<br><a href="./sell">SELL</a><br><a href="./products">PRODUCTS</a><br><a href="./profile">PROFILE</a><br><a href="./">ROOT</a>`);
-// });
-
-// app.get("/products",(req,res)=>{
-//     res.send(`Server running on port ${port} you are in products list<br> <a href="./">ROOT</a><br><a href="./profile">PROFILE</a><br><a href="./sell">SELL</a>`);
-// });
-
-// app.get("/sell",(req,res)=>{
-//     res.send(`Server running on port ${port} this is the selling page <br><a href="./profile">PROFILE</a><br><a href="./products">PRODUCTS</a><br><a href="./">ROOT</a>`);
-// });
-
-// app.get("/profile",(req,res)=>{
-//     res.send(`Server running on port ${port} this is your profile <br><a href="./sell">SELL</a><br><a href="./products">PRODUCTS</a><br><a href="./">ROOT</a>`);
-// });
-
-
-
-

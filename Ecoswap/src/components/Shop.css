@@ -37,6 +37,7 @@
     box-sizing: border-box;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
     position: relative;
+    transition: 300ms;
 }
 .card-pro >h4{
     font-family: Poppins;
@@ -71,6 +72,12 @@
     display: flex;
 }
 
+.card-pro:hover{
+    transform: scale(1.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
 .add-cart-btn{
     border: 1px solid white;
     border-radius: 0;
@@ -92,7 +99,7 @@
 @media screen and (max-width: 1000px)
 {
     .card-pro{
-        flex-basis: 30%;
+        flex-basis: 25%;
         /* height: 50vh; */
         max-width: 30%;
     }

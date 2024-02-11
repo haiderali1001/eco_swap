@@ -1,0 +1,23 @@
+h3{
+    color: black;
+    font-family: Poppins;
+}
+.profile-page button{
+        margin-left: auto;
+        margin-right: auto;
+        height: 6vh;
+        width: 30%;
+        background-color: rgb(184, 142, 47);
+        font-family: Poppins;
+        border-radius: 3px;
+        box-sizing: border-box;
+}
+.profile-page{
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10vh;
+}
