@@ -17,7 +17,7 @@ import axios from 'axios'
 import Profile from './components/login/Profile.jsx'
 
 // const baseURL = "http://localhost:3000"
-const baseURL = "https://mystiqueapi.onrender.com/";
+const baseURL = "https://mystiqueapi.onrender.com";
 
 function App() {
   const [profilesrc, setProfilesrc] = useState("/icon-profile.svg");
