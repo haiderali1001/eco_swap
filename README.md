@@ -6,6 +6,8 @@ API Documentation Link - https://documenter.getpostman.com/view/32332305/2s9YymH
 
 Backend Link - https://mystiqueapi.onrender.com
 
+Figma Link - https://www.figma.com/file/kJNvNI4TO0EcOxWPTS5zcA/EcoSwap?type=design&mode=design&t=JI5RrBovD99k1uSN-1
+
 - Which problem Project is Solving?
 
   - The second-hand electrical appliances website faces challenges in ensuring product quality and customer trust. Efficiently managing returns, providing warranties, and adhering to legal standards for electrical appliances present additional hurdles. Balancing competitive pricing, profitability, and addressing logistics complexities are crucial considerations.
