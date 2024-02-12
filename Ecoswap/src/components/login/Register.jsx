@@ -9,9 +9,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 
-const baseURL = "http://localhost:3000/signup"
+// const baseURL = "http://localhost:3000/signup"
 
-// const baseURL = "https://mystiqueapi.onrender.com/signup";
+const baseURL = "https://mystiqueapi.onrender.com/signup";
 
 const Register = ({change}) => {
     const navigate = useNavigate();
