@@ -4,7 +4,7 @@ Website Link - https://eco-swap.netlify.app/
 
 API Documentation Link - https://documenter.getpostman.com/view/32332305/2s9YymHkPm
 
-Backend Lik - https://mystiqueapi.onrender.com
+Backend Link - https://mystiqueapi.onrender.com
 
 - Which problem Project is Solving?
 
@@ -28,3 +28,5 @@ Backend Lik - https://mystiqueapi.onrender.com
   - Feedback Collection Systems: Establish mechanisms for regularly collecting customer feedback to understand their experiences and preferences, enabling continuous improvement.
 
   - Streamlined Inventory Management: Implement efficient inventory management systems to keep product listings up-to-date and ensure accurate information on product availability.
+
+  VIDEO DEMO LINK - https://drive.google.com/file/d/1wkMgtQi9as-4J_S8lS2OsXXoxHfQMEp1/view?usp=drive_link
