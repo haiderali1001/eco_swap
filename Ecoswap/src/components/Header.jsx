@@ -11,6 +11,7 @@ export default function Header({headerTitle}) {
             className="rectangle-frame-icon"
             alt=""
             src="/bg-forest.png"
+            draggable="false"
           />
         </div>
         <div className="group-container">
@@ -19,6 +20,7 @@ export default function Header({headerTitle}) {
               className="meubel-house-logos-05-icon1"
               alt=""
               src="/sitelogo.png"
+              draggable="false"
             />
             <h1 className="cart1">{headerTitle}</h1>
           </div>
@@ -30,6 +32,7 @@ export default function Header({headerTitle}) {
             loading="eager"
             alt=""
             src="/dashiconsarrowdownalt2@2x.png"
+            draggable="false"
           />
           <div className="cart2">{headerTitle}</div>
         </div>

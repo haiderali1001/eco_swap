@@ -10,7 +10,6 @@ const baseURL = "https://mystiqueapi.onrender.com"
 // const baseURL = "http://localhost:3000"
 
 function Navbar({ profileicon, userdetails, ogproducts, setuserdetails }) {
-  const myRef = useRef(null);
   const [visibility, setVisibility] = useState("invisible");
   const [sidemenusrc, setSidemenusrc] = useState("/burger-icon.svg");
   const [cbvisible, setCbvisible] = useState("cb-invisible");

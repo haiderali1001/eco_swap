@@ -41,13 +41,15 @@ const Register = ({change}) => {
 
             axios.post(baseURL, { "name": values.name, "email": values.email, "password": values.password })
                 .then((res) => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     toast.success("Registered Successfully!");
                     change();
                     setTimeout(goHome, 2000);
                 })
                 .catch((err) => {
+                    if(err.response.data.toast === 'userexists') toast.error("User already exists!");
                     console.log(err.response ? err.response.data : "Some error occurred");
+                    // console.log(err)
                 })
         }
     });

@@ -118,7 +118,7 @@ app.post('/signup', async (req, res) => {
   //user exists or not
   const existingUser = await User.findOne({ email });
   if (existingUser) {
-    res.status(404).send({ failure: 'User already exists' });
+    res.status(404).send({ failure: 'User already exists', toast:'userexists' });
     return;
   }
   //encryption of password
