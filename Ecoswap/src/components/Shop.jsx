@@ -8,12 +8,13 @@ import 'react-toastify/dist/ReactToastify.css';
 const baseURL = "https://mystiqueapi.onrender.com"
 // const baseURL = "http://localhost:3000"
 
-function Shop({userdetails, ogproducts}) {
+function Shop({userdetails, ogproducts, setuserdetails}) {
 
   const addToCart = async (p_id, u_id, p_name) => {
     try{await axios.patch(`${baseURL}/products/${p_id}/${u_id}`, {pid : p_id}).then((res)=>{
-      console.log(res.data);
+      // console.log(res.data);
       userdetails.cart.push(p_id);
+      setuserdetails({...userdetails});
       toast.success(`${p_name} has been added to the cart successfully`);
     }).catch((err)=>{console.log(err)
     })} catch(error){

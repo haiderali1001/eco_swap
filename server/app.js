@@ -198,6 +198,36 @@ app.patch("/products/:pid/:uid", async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+//remove from cart
+app.patch("/productsrem/:pid/:uid", async (req, res) => {
+  // console.log(req.params);
+  try {
+    const uid = req.params.uid;
+    const pid = req.params.pid;
+
+    // Find the user by uid
+    const user = await User.findOne({ '_id': uid });
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Remove pid from the user's cart array
+    // user.cart.push(pid);
+    let index = user.cart.indexOf(pid);
+        if (index !== -1) {
+          user.cart.splice(index, 1);
+        }
+
+    // Save the updated user document
+    await user.save();
+
+    res.status(200).json({ message: `Product removed from cart successfully ${user.name}` });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 // const productId = req.params.pid;
 // const product = await Product.find(product => product._id === productId).catch(err => {console.log(err)});
 // console.log("hi");

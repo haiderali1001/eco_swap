@@ -43,7 +43,7 @@ function App() {
         //res.data.token res.data.userid res.data.username res.data.cart res.data.email
         setUserdetails({ userid: res.data.userid, cart: res.data.cart, username: res.data.username, email: res.data.email });
         // console.log(res.data.userid,res.data.username, res.data.cart);
-        toast.success("Logged-in Successfully!");
+        // toast.success("Logged-in Successfully!");
         changeprofileicon();
         // setTimeout(goHome, 5000);
       })
@@ -74,7 +74,7 @@ function App() {
     <>
       <BrowserRouter>
         <ToastContainer autoClose={1000} />
-        <Navbar profileicon={profilesrc} userdetails={userdetails} ogproducts={ogproducts} />
+        <Navbar profileicon={profilesrc} userdetails={userdetails} ogproducts={ogproducts} setuserdetails={setUserdetails}/>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/*' element={<p>No route found here</p>} />
@@ -83,7 +83,7 @@ function App() {
           <Route path='/checkout' element={<Cart />} />
           <Route path='/about' element={<About />} />
           <Route path='/profile' element={(userdetails.userid != null) ? <Profile change={(changeprofileiconlgout)} userdetails={userdetails} setUserdetails={setUserdetails} /> : <Login change={changeprofileicon} userdetails={userdetails} setUserdetails={setUserdetails} />} />
-          <Route path='/shop' element={<Shop userdetails={userdetails} ogproducts={ogproducts} />} />
+          <Route path='/shop' element={<Shop userdetails={userdetails} ogproducts={ogproducts} setuserdetails={setUserdetails}/>} />
           <Route path='/register' element={<Register change={changeprofileicon} />} />
         </Routes>
       </BrowserRouter>
