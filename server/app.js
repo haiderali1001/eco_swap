@@ -115,6 +115,7 @@ app.post('/signup', async (req, res) => {
   if (!name || !password || !email) {
     return res.status(400).json({ error: 'Enter Complete Details' });
   }
+  //user exists or not
   const existingUser = await User.findOne({ email });
   if (existingUser) {
     res.status(404).send({ failure: 'User already exists' });

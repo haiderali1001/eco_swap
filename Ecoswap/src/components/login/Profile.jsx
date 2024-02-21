@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../Header'
 import Footer from '../Footer'
 import './Profile.css'
+import {toast} from 'react-toastify'
 
 function Profile({ userdetails, setUserdetails, change }) {
     return (
@@ -14,6 +15,7 @@ function Profile({ userdetails, setUserdetails, change }) {
                 <button onClick={() => {
                 localStorage.setItem("logintoken", null);
                 change();
+                toast.success("Logged-out successfully");
                 setUserdetails({});
             }}>Log Out</button>
             </div>

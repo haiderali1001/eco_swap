@@ -74,9 +74,9 @@ const Login = ({change, userdetails,setUserdetails}) => {
                                 value={formik.values.email}
                                 placeholder='example@gmail.com'
                             />
-                            {formik.touched.email && formik.errors.email ? (
+                            {/* {formik.touched.email && formik.errors.email ? (
                                 <div>{formik.errors.email}</div>
-                            ) : null}
+                            ) : null} */}
                         </div>
 
                         <div className="labellz">
@@ -90,9 +90,9 @@ const Login = ({change, userdetails,setUserdetails}) => {
                                 value={formik.values.password}
                                 placeholder='password'
                             />
-                            {formik.touched.subject && formik.errors.subject ? (
-                                <div>{formik.errors.subject}</div>
-                            ) : null}
+                            {/* {formik.touched.subject && formik.errors.subject ? (
+                                <div style={{color: 'black'}}>{formik.errors.subject}</div>
+                            ) : null} */}
                         </div>
 
 

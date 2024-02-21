@@ -73,12 +73,12 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <ToastContainer autoClose={1800} />
+        <ToastContainer autoClose={1000} />
         <Navbar profileicon={profilesrc} userdetails={userdetails} ogproducts={ogproducts} />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/*' element={<p>No route found here</p>} />
-          <Route path='/cart' element={<Cart />} />
+          <Route path='/cart' element={<Cart userdetails={userdetails} ogproducts={ogproducts}/>} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/checkout' element={<Cart />} />
           <Route path='/about' element={<About />} />

@@ -32,3 +32,6 @@ Figma Link - https://www.figma.com/file/kJNvNI4TO0EcOxWPTS5zcA/EcoSwap?type=desi
   - Streamlined Inventory Management: Implement efficient inventory management systems to keep product listings up-to-date and ensure accurate information on product availability.
 
   VIDEO DEMO LINK - https://drive.google.com/file/d/1wkMgtQi9as-4J_S8lS2OsXXoxHfQMEp1/view?usp=drive_link
+
+
+  

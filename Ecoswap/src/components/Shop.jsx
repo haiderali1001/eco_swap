@@ -15,8 +15,7 @@ function Shop({userdetails, ogproducts}) {
       console.log(res.data);
       userdetails.cart.push(p_id);
       toast.success(`${p_name} has been added to the cart successfully`);
-    }).catch((err)=>{
-
+    }).catch((err)=>{console.log(err)
     })} catch(error){
       console.log(error);
     }
@@ -38,6 +37,9 @@ function Shop({userdetails, ogproducts}) {
                 <div className='pro-overlay'>
                   <button className='add-cart-btn' onClick={()=>{
                     if(userdetails.userid){
+                      if(userdetails.cart.includes(ele._id)){
+                        toast.warning("Item already present in Cart");
+                      } else
                       addToCart(ele._id, userdetails.userid, ele.title);
                     }
                     else{

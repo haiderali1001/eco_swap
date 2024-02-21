@@ -31,14 +31,14 @@ const connectDB = async () => {
 //   "image": "https://github.com/AbhiK002/gismos/assets/68178267/13f2e192-cb9f-49cc-9d73-e8cb308ac9cb" 
 // });
 
-// const addProductsToDB = async (p) => {
-//   try {
-//     await p.save();
-//     console.log(`${p.title} added successfully!`);
-//   } catch (error) {
-//     console.error("Error adding products:", error);
-//   }
-// };
+const addProductsToDB = async (p) => {
+  try {
+    await p.save();
+    console.log(`${p.title} added successfully!`);
+  } catch (error) {
+    console.error("Error adding products:", error);
+  }
+};
 
 // Products.products.forEach((product) => {
 //   const p = new Product(product);

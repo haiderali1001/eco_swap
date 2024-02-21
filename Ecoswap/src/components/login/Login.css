@@ -1,3 +1,10 @@
+/* input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+} */
+
 .loginpage {
     width: 100%;
     /* height: ; */
@@ -34,6 +41,13 @@
     height: 50%;
     width: 30%;
     padding:4px 12px;
+}
+
+input:-internal-autofill-selected {
+    appearance: menulist-button;
+    background-image: none !important;
+    background-color: -internal-light-dark(rgb(232, 240, 254), white) !important;
+    color: fieldtext !important;
 }
 
 .loginformdiv {

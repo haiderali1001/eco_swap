@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom'
 import './Cart.css'
 import Header from './Header';
 import Footer from './Footer';
+import { Axios } from 'axios';
 
-function Cart() {
+function Cart({userdetails, ogproducts}) {
   return (
     <>
+    <Header headerTitle={"Cart"} />
       <div className="cart">
-        <Header headerTitle={"Cart"} />
         <section className="home-label">
           <div className="rectangle-parent">
             <div className="frame-child" />
@@ -37,7 +38,7 @@ function Cart() {
                   </div>
                 </div>
                 <div className="payment-links">
-                  <div className="rs-25000000">Rs. 250,000.00</div>
+                  <div className="rs-25000000">Rs. 25,000.00</div>
                 </div>
                 <div className="privacy-policy-frame">
                   <div className="rectangle-group">
@@ -86,8 +87,8 @@ function Cart() {
             </div>
           </div>
         </section>
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 }
