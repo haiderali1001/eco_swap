@@ -4,9 +4,9 @@ import Header from './Header'
 import axios from 'axios'
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import config from '../config';
 
-const baseURL = "https://mystiqueapi.onrender.com"
-// const baseURL = "http://localhost:3000"
+const baseURL = config.getBackendUrl();
 
 function Shop({userdetails, ogproducts, setuserdetails}) {
 

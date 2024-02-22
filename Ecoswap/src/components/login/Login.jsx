@@ -7,10 +7,9 @@ import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from "react-toastify";
+import config from '../../config';
 
-// const baseURL = "http://localhost:3000/login"
-
-const baseURL = "https://mystiqueapi.onrender.com/login";
+const baseURL = config.getBackendUrl();
 
 const Login = ({change, userdetails,setUserdetails}) => {
     const navigate = useNavigate();
@@ -35,7 +34,7 @@ const Login = ({change, userdetails,setUserdetails}) => {
             //     return;
             // }
 
-            axios.post(baseURL, { "email": values.email, "password": values.password })
+            axios.post(`${baseURL}/login`, { "email": values.email, "password": values.password })
                 .then((res) => {
                     console.log(res.data.success);
                     //res.data.token

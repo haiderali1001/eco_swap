@@ -5,31 +5,27 @@
   position: relative;
   background-color: var(--color-white);
   display: none;
-  max-width: 100%;
-}
+  max-width: 100%;}
 .price-label-child {
   height: 3.44rem;
   width: 51.06rem;
   position: relative;
   background-color: var(--color-linen-100);
   flex-shrink: 0;
-  display: none;
-}
+  display: none;}
 .price,
 .product {
   height: 1.5rem;
   position: relative;
   font-weight: 500;
   display: inline-block;
-  z-index: 2;
-}
+  z-index: 2;}
 .iphone-image {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 0 1.5rem 0 0;
-}
+  padding: 0 1.5rem 0 0;}
 .quantity,
 .subtotal {
   position: relative;

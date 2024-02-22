@@ -5,15 +5,17 @@ import { useRef } from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from "react-toastify";
+import config from '../config';
 
-const baseURL = "https://mystiqueapi.onrender.com"
-// const baseURL = "http://localhost:3000"
+const baseURL = config.getBackendUrl();
 
 function Navbar({ profileicon, userdetails, ogproducts, setuserdetails }) {
   const [visibility, setVisibility] = useState("invisible");
   const [sidemenusrc, setSidemenusrc] = useState("/burger-icon.svg");
   const [cbvisible, setCbvisible] = useState("cb-invisible");
   const [carticonsrc, setCarticonsrc] = useState("/icon-cart.svg");
+  const [sbHidden, setSbhidden] = useState("");//sidebar hidden
+  const [cbHidden, setCbhidden] = useState("");//cart sidebar hidden
 
 
   function findObjectById(objects, id) {
@@ -64,24 +66,28 @@ function Navbar({ profileicon, userdetails, ogproducts, setuserdetails }) {
           <Link to="/profile"><img draggable='false' className="icon-profile" loading="eager" alt="" src={profileicon} /></Link>
           <img draggable='false' className="icon-search" loading="eager" alt="" src="/icon-search.svg" />
           <img draggable='false' className="icon-heart" loading="eager" alt="" src="/icon-heart.svg" />
-          <Link className='csbar' onClick={() => {
+          <Link className={ `csbar ${cbHidden}`} onClick={() => {
             if (cbvisible === "cb-invisible") {
               setCbvisible("cb-visible");
               setCarticonsrc("/cart-close.svg");
+              setSbhidden("hidden");//set side bar button to hidden
             }
             else {
               setCbvisible("cb-invisible");
               setCarticonsrc("/icon-cart.svg");
+              setSbhidden("");// set side bar button to normal
             }
           }}><img draggable='false' className="icon-cart" loading="eager" alt="" src={carticonsrc} /></Link>
-          <button className='side-menu-btn' style={{ backgroundColor: 'transparent', border: 'none', outline: 'none' }} onClick={() => {
+          <button className= {`side-menu-btn ${sbHidden}`} style={{ backgroundColor: 'transparent', border: 'none', outline: 'none' }} onClick={() => {
             if (visibility === "invisible") {
               setVisibility("visibile");
               setSidemenusrc("/cross-icon.svg");
+              setCbhidden("hidden");//add hidden to cart link
             }
             else {
               setVisibility("invisible");
               setSidemenusrc("/burger-icon.svg");
+              setCbhidden("");//set cart link to normal
             }
           }}>
             <img draggable='false' className="side-menu" loading="eager" alt="" src={sidemenusrc} />

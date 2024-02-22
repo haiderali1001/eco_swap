@@ -12,12 +12,13 @@ import About from './components/About.jsx'
 import Shop from './components/Shop.jsx'
 import Login from './components/login/Login.jsx'
 import Register from './components/login/Register.jsx'
+import Carty from './components/Carty.jsx'
 import { ToastContainer, toast } from "react-toastify";
 import axios from 'axios'
 import Profile from './components/login/Profile.jsx'
+import config from './config.js'
 
-// const baseURL = "http://localhost:3000"
-const baseURL = "https://mystiqueapi.onrender.com";
+const baseURL = config.getBackendUrl();
 
 function App() {
   const [profilesrc, setProfilesrc] = useState("/icon-profile.svg");
@@ -78,9 +79,9 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/*' element={<p>No route found here</p>} />
-          <Route path='/cart' element={<Cart userdetails={userdetails} ogproducts={ogproducts}/>} />
+          <Route path='/cart' element={<Carty userdetails={userdetails} ogproducts={ogproducts}/>} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/checkout' element={<Cart />} />
+          <Route path='/checkout' element={<Cart userdetails={userdetails} ogproducts={ogproducts}/>} />
           <Route path='/about' element={<About />} />
           <Route path='/profile' element={(userdetails.userid != null) ? <Profile change={(changeprofileiconlgout)} userdetails={userdetails} setUserdetails={setUserdetails} /> : <Login change={changeprofileicon} userdetails={userdetails} setUserdetails={setUserdetails} />} />
           <Route path='/shop' element={<Shop userdetails={userdetails} ogproducts={ogproducts} setuserdetails={setUserdetails}/>} />
