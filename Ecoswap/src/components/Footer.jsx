@@ -115,7 +115,7 @@ function Footer() {
                     <div className="line-parent">
                         <div className="line-div" />
                         <div className="ecoswap-all-rights">
-                            2023 ecoswap. All rights reverved
+                            2023 ecoswap. All rights reserved
                         </div>
                     </div>
                 </div>

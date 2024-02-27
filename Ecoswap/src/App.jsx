@@ -79,7 +79,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/*' element={<p>No route found here</p>} />
-          <Route path='/cart' element={<Carty userdetails={userdetails} ogproducts={ogproducts}/>} />
+          <Route path='/cart' element={<Carty userdetails={userdetails} ogproducts={ogproducts} setuserdetails={setUserdetails}/>} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/checkout' element={<Cart userdetails={userdetails} ogproducts={ogproducts}/>} />
           <Route path='/about' element={<About />} />
