@@ -12,12 +12,14 @@ import config from '../../config';
 
 const baseURL = config.getBackendUrl();
 
-const Register = ({change}) => {
+const Register = ({change, userdetails,setUserdetails}) => {
     const navigate = useNavigate();
 
     function goHome() {
         navigate("/shop");
     }
+
+
 
     const formik = useFormik({
         initialValues: {
@@ -43,6 +45,8 @@ const Register = ({change}) => {
                     // console.log(res.data);
                     toast.success("Registered Successfully!");
                     change();
+                    localStorage.setItem("logintoken" , res.data.token);
+                    setUserdetails({userid: res.data.userid, cart: res.data.cart, username: res.data.username, email: res.data.email});
                     setTimeout(goHome, 2000);
                 })
                 .catch((err) => {

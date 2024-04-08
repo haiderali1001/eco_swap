@@ -85,7 +85,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/profile' element={(userdetails.userid != null) ? <Profile change={(changeprofileiconlgout)} userdetails={userdetails} setUserdetails={setUserdetails} /> : <Login change={changeprofileicon} userdetails={userdetails} setUserdetails={setUserdetails} />} />
           <Route path='/shop' element={<Shop userdetails={userdetails} ogproducts={ogproducts} setuserdetails={setUserdetails}/>} />
-          <Route path='/register' element={<Register change={changeprofileicon} />} />
+          <Route path='/register' element={<Register change={changeprofileicon} userdetails={userdetails} setUserdetails={setUserdetails} />} />
         </Routes>
       </BrowserRouter>
     </>

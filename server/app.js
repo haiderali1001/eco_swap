@@ -139,7 +139,7 @@ app.post('/signup', async (req, res) => {
   user.token = token;
   user.password = undefined;
 
-  return res.status(200).json({ success: `You have succesfully registered. Your email is ${email}` });
+  return res.status(200).json({ success: `You have succesfully registered. Your email is ${email}`, token: token,userid: user._id, username: user.name, cart: user.cart, email: email });
 })
 
 //Products list
